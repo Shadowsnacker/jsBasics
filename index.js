@@ -36,7 +36,7 @@ for (let index in colors) console.log(index, colors[index]);
 for (let color of colors) console.log(color);
 /* SUMMARY: For-in loop: Iterates over the properties of an object.
             For-of loop: Iterates over the elements/items of an array */
-
+// Exercise #1
 let number = max(3, 3);
 console.log(number);
 function max (a, b){
@@ -45,7 +45,21 @@ function max (a, b){
     // Alternatively instead of lines 43 & 44, use the Ternary/Conditional Operator
     return (a > b) ? a : b;
 }
-
+// Exercise #2
+console.log(isLandscape(45, 30));
 function isLandscape(width, height){
     return (width > height);
 }
+// Exercise #3
+// Exercise #4
+// Exercise #5
+// Exercise #6
+// Exercise #7
+// Exercise #8
+// Exercise #9
+// Exercise #10
+// Exercise #11
+// Exercise #12
+// Exercise #13
+// Exercise #14
+// Exercise #15
