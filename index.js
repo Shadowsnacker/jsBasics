@@ -50,7 +50,8 @@ console.log(isLandscape(45, 30));
 function isLandscape(width, height){
     return (width > height);
 }
-// Exercise #3
+// Exercise #3: fizzbuzz!
+
 // Exercise #4
 // Exercise #5
 // Exercise #6
