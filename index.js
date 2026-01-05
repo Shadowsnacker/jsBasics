@@ -144,6 +144,23 @@ function sum(limit) {
     return sum;
 }
 // Exercise #9
+const marks = [80, 80, 50];
+console.log(calculateGrade(marks));
+function calculateGrade(mark) {
+    const average = calculateAverage(mark); // This line is the trick that segregates functions 
+    if (average < 60) return 'F';
+    if (average < 70) return 'D';
+    if (average < 80) return 'C';
+    if (average < 90) return 'B';
+    return 'A';
+} // These two function were once together, but it's best to split up jobs as simply as possible
+function calculateAverage(array) {
+    let grade = 0;
+    for (let x of array)
+        grade += x;
+    return grade / array.length;
+}
+
 // Exercise #10
 // Exercise #11
 // Exercise #12
