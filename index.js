@@ -97,7 +97,7 @@ function checkSpeed(speed) {
     else
         console.log('Points: ', points);
 }
-// Exercise #5 Odd or even
+// // Exercise #5 Odd or even
 // showNumbers(10);
 // function showNumbers(limit) {
 //     for (let i = 0; i <= limit; i++){
@@ -120,6 +120,20 @@ function countTruthy(array) {
     return n;
 }
 // Exercise #7
+const movie = {
+    title: 'a',
+    releaseYear: 2018,
+    rating: 4.5,
+    director: 'b',
+}
+showProperties(movie);
+function showProperties(obj) {
+    // Note the single line useage trimming down extra brackets!
+    for (let key in obj)
+        if (typeof obj[key] === 'string')
+            console.log(key, obj[key]);
+            // console.log(`${key}: ${obj[key]}`); // or to format the semicolon in the output for style
+}
 // Exercise #8
 // Exercise #9
 // Exercise #10
