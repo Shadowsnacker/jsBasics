@@ -127,14 +127,23 @@ const movie = {
     director: 'b',
 }
 showProperties(movie);
-function showProperties(obj) {
+function showProperties(objValue) {
     // Note the single line useage trimming down extra brackets!
-    for (let key in obj)
-        if (typeof obj[key] === 'string')
-            console.log(key + ': ' + obj[key]);
-            // console.log(`${key}: ${obj[key]}`); // or to format the semicolon in the output for style
+    for (let key in objValue)
+        if (typeof objValue[key] === 'string')
+            console.log(key + ': ' + objValue[key]);
+            // console.log(`${key}: ${objValue[key]}`); // or to format the semicolon in the output for style
 }
-// Exercise #8
+// Exercise #8 Summing together a limit's multiples
+console.log(sum(10));
+function sum(limit) {
+    let sum = 0;
+    for (let i = 0; i <= limit; i++)
+        if (i % 3 === 0 || i % 5 === 0)
+            sum += i;
+    return sum;
+}
+
 // Exercise #9
 // Exercise #10
 // Exercise #11
