@@ -96,9 +96,19 @@ function checkSpeed(speed) {
     else
         console.log('Points: ', points);
 }
-// Exercise #5
+// Exercise #5 Say if each number is odd or even up to the limit.
+showNumbers(10);
+function showNumbers(limit) {
+    for (let i = 0; i <= limit; i++){
+        // if (i % 2 === 0) console.log(i, "Even");
+        // else console.log(i, "Odd");               
+        // We could do lines 103 & 104 but a ternary operator below is cleaner
+        const message = (i % 2 === 0) ? 'Even' : 'Odd';
+        console.log(i, message);
+    }
+}
+// Exercise #6 
 
-// Exercise #6
 // Exercise #7
 // Exercise #8
 // Exercise #9
