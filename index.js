@@ -81,6 +81,7 @@ function fizzbuzz(input) {
 // Exercise #4
 
 // Exercise #5
+
 // Exercise #6
 // Exercise #7
 // Exercise #8
