@@ -131,7 +131,7 @@ function showProperties(obj) {
     // Note the single line useage trimming down extra brackets!
     for (let key in obj)
         if (typeof obj[key] === 'string')
-            console.log(key, obj[key]);
+            console.log(key + ': ' + obj[key]);
             // console.log(`${key}: ${obj[key]}`); // or to format the semicolon in the output for style
 }
 // Exercise #8
