@@ -77,9 +77,24 @@ function fizzbuzz(input) {
     }
     return input;
 }
-
 // Exercise #4
-
+// Speed limit is 70. console.log('ok') if driving under 1 point.
+// Every 5 over 70 adds 1 point.
+// Once 12 points is reached, suspend liscense  
+checkSpeed(118);
+function checkSpeed(speed) {
+    const speedLimit = 70;
+    const kmPerPoint = 5;
+    if (speed < speedLimit) // Changed the magic numer(70) to a dynamic reference point
+        console.log('ok');
+    else {
+        const points = Math.floor((speed - speedLimit) / kmPerPoint);
+        if (points >= 12)
+            console.log('License suspended');
+        else
+            console.log('Points: ', points);
+    }
+}
 // Exercise #5
 
 // Exercise #6
