@@ -143,7 +143,6 @@ function sum(limit) {
             sum += i;
     return sum;
 }
-
 // Exercise #9
 // Exercise #10
 // Exercise #11
