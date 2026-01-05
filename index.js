@@ -98,16 +98,16 @@ function checkSpeed(speed) {
         console.log('Points: ', points);
 }
 // Exercise #5 Odd or even
-showNumbers(10);
-function showNumbers(limit) {
-    for (let i = 0; i <= limit; i++){
-        // if (i % 2 === 0) console.log(i, "Even");
-        // else console.log(i, "Odd");               
-        // We could do lines 103 & 104 but a ternary operator below is cleaner
-        const message = (i % 2 === 0) ? 'Even' : 'Odd';
-        console.log(i, message);
-    }
-}
+// showNumbers(10);
+// function showNumbers(limit) {
+//     for (let i = 0; i <= limit; i++){
+//         // if (i % 2 === 0) console.log(i, "Even");
+//         // else console.log(i, "Odd");               
+//         // We could do lines 103 & 104 but a ternary operator below is cleaner
+//         const message = (i % 2 === 0) ? 'Even' : 'Odd';
+//         console.log(i, message);
+//     }
+// }
 // Exercise #6 Count number of 'truthy' values in an array
 const array = [0, null, undefined, '', 1, 2, 3];
 console.log(countTruthy(array));
