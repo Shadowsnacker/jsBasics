@@ -19,6 +19,7 @@
 //     if (j % 2 !== 0) console.log('Olympus.. would be that weh', j); 
 //     j++;
 // } while (j <= 5);
+// **************************************************************************************
 // // Begin a for-in loop. Can list items in objects.
 // const person = {
 //     name: 'Jeremy',
@@ -28,7 +29,6 @@
 //     /* Dot notation 'person.name' would work here but not always if it hasn't rendered yet.
 //         square bracket notation is more commonplace friendly */
 //     console.log(key, person[key]);
-
 // // Begin for-of loop.
 // // Line 35 is an old way using a for-in loop through an array.
 // const colors = ['red', 'green', 'blue'];
@@ -36,7 +36,8 @@
 // for (let color of colors) console.log(color);
 // /* SUMMARY: For-in loop: Iterates over the properties of an object.
 //             For-of loop: Iterates over the elements/items of an array */
-// // Exercise #1
+// *****************************************************************************************
+// Exercise #1
 // let number = max(3, 3);
 // console.log(number);
 // function max (a, b){
@@ -107,8 +108,17 @@ function showNumbers(limit) {
         console.log(i, message);
     }
 }
-// Exercise #6 
-
+// Exercise #6 Count number of 'truthy' values in an array
+const array = [0, null, undefined, '', 1, 2, 3];
+console.log(countTruthy(array));
+function countTruthy(array) {
+    let n = 0;
+    for (let value of array){  // The trick of this whole thing is a FOR-OF loop. Review ^
+        if (value) 
+            n++;
+    }
+    return n;
+}
 // Exercise #7
 // Exercise #8
 // Exercise #9
