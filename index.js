@@ -160,8 +160,16 @@ function calculateAverage(array) {
         grade += x;
     return grade / array.length;
 }
-
 // Exercise #10
+stars(5);
+function stars(rows) {
+    for (let i = 0; i < rows; i++){
+        let line = '';
+        for (let j = 0; j <= i; j++)
+            line += '*';
+        console.log(line);
+    }
+}
 // Exercise #11
 // Exercise #12
 // Exercise #13
