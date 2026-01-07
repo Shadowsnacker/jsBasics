@@ -171,17 +171,18 @@ function stars(rows) {
     }
 }
 // Exercise #11
-// showPrimes(20);
+showPrimes(20);
 function showPrimes(limit) {
     for (let number = 2; number <= limit; number++){
-        let isPrime = true;
-        for (let factor = 2; factor < number; factor++){ // This line is brilliant
-            if (number % factor === 0){
-                isPrime = false;
-                break;
-            }
+        if (isAPrime(number) === true) console.log(number);
+    }
+}
+function isAPrime(number) {
+    for (let factor = 2; factor < number; factor++){ // This line is brilliant
+        if (number % factor === 0){
+            return false;
         }
-        if (isPrime) console.log(number);
+        return true;
     }
 }
 // Exercise #12
