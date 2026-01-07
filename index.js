@@ -135,7 +135,7 @@ function showProperties(objValue) {
             // console.log(`${key}: ${objValue[key]}`); // or to format the semicolon in the output for style
 }
 // Exercise #8 Summing together a limit's multiples
-console.log(sum(10));
+// console.log(sum(10));
 function sum(limit) {
     let sum = 0;
     for (let i = 0; i <= limit; i++)
@@ -145,7 +145,7 @@ function sum(limit) {
 }
 // Exercise #9
 const marks = [80, 80, 50];
-console.log(calculateGrade(marks));
+// console.log(calculateGrade(marks));
 function calculateGrade(mark) {
     const average = calculateAverage(mark); // This line is the trick that segregates functions 
     if (average < 60) return 'F';
@@ -161,7 +161,7 @@ function calculateAverage(array) {
     return grade / array.length;
 }
 // Exercise #10
-stars(5);
+// stars(5);
 function stars(rows) {
     for (let i = 0; i < rows; i++){
         let line = '';
@@ -171,6 +171,19 @@ function stars(rows) {
     }
 }
 // Exercise #11
+// showPrimes(20);
+function showPrimes(limit) {
+    for (let number = 2; number <= limit; number++){
+        let isPrime = true;
+        for (let factor = 2; factor < number; factor++){ // This line is brilliant
+            if (number % factor === 0){
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) console.log(number);
+    }
+}
 // Exercise #12
 // Exercise #13
 // Exercise #14
