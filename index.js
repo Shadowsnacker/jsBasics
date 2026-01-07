@@ -174,14 +174,13 @@ function stars(rows) {
 showPrimes(20);
 function showPrimes(limit) {
     for (let number = 2; number <= limit; number++)
-        if (isAPrime(number) === true) console.log(number);
+        if (isPrime(number)) console.log(number);
 }
-function isAPrime(number) {
-    for (let factor = 2; factor < number; factor++){ // This line is brilliant
+function isPrime(number) {
+    for (let factor = 2; factor < number; factor++) // This line is brilliant
         if (number % factor === 0)
             return false;
-        return true;
-    }
+    return true;
 }
 // Exercise #12
 // Exercise #13
