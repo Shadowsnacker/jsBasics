@@ -173,15 +173,13 @@ function stars(rows) {
 // Exercise #11
 showPrimes(20);
 function showPrimes(limit) {
-    for (let number = 2; number <= limit; number++){
+    for (let number = 2; number <= limit; number++)
         if (isAPrime(number) === true) console.log(number);
-    }
 }
 function isAPrime(number) {
     for (let factor = 2; factor < number; factor++){ // This line is brilliant
-        if (number % factor === 0){
+        if (number % factor === 0)
             return false;
-        }
         return true;
     }
 }
