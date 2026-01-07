@@ -171,7 +171,7 @@ function stars(rows) {
     }
 }
 // Exercise #11
-showPrimes(20);
+// showPrimes(20);
 function showPrimes(limit) {
     for (let number = 2; number <= limit; number++)
         if (isPrime(number)) console.log(number);
@@ -182,6 +182,8 @@ function isPrime(number) {
             return false;
     return true;
 }
+// ~~~~~~~~~~~~~~~Lessons continue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 // Exercise #12
 // Exercise #13
 // Exercise #14
