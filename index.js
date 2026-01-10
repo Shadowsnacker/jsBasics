@@ -183,8 +183,8 @@ function isPrime(number) {
     return true;
 }
 // ~~~~~~~~~~~~~~~Lessons continue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 // Exercise #12
+
 // Exercise #13
 // Exercise #14
 // Exercise #15
