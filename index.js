@@ -193,7 +193,8 @@ function showAddress(address) {
     for (let key in address)
         console.log(key, address[key]);
 }
-showAddress(address);
+// showAddress(address); // Call the function
+
 // Exercise #13
 // Exercise #14
 // Exercise #15
