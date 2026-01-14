@@ -183,8 +183,17 @@ function isPrime(number) {
     return true;
 }
 // ~~~~~~~~~~~~~~~Lessons continue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Exercise #12
-
+// Exercise #12: Address Object
+const address = {
+    street: '123 somewhere st',
+    city: 'b',
+    zipcode: 54321,
+};
+function showAddress(address) {
+    for (let key in address)
+        console.log(key, address[key]);
+}
+showAddress(address);
 // Exercise #13
 // Exercise #14
 // Exercise #15
