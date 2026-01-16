@@ -195,6 +195,25 @@ function showAddress(address) {
 }
 // showAddress(address); // Call the function
 
-// Exercise #13
+// Exercise #13 Factory vs Constructor
+// Factory functions return objects
+let addy1 = createAddress('a', 'b', 'c'); // this completes the factory function
+console.log(addy1);
+function createAddress(street, city, zipcode) {
+    return {
+        street,
+        city,
+        zipcode,
+    };
+}
+// Constructor function (Watch that PascalCase convention)
+let addy2 = new Address('a', 'b', 'c'); // this completes the constructor function
+console.log(addy2);
+function Address(street, city, zipcode) {
+    this.street = street;
+    this.city = city;
+    this.zipcode = zipcode;
+}
+
 // Exercise #14
 // Exercise #15
