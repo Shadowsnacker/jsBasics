@@ -1,24 +1,24 @@
-for (let i = 5; i >= 1; i--){
-    if (i % 2 !== 0){ // Shows odd numbers
-        console.log('Hello ', i);
-    }
-}
+// for (let i = 5; i >= 1; i--){
+//     if (i % 2 !== 0){ // Shows odd numbers
+//         console.log('Hello ', i);
+//     }
+// }
 // Begin the while loop; needs the leading external variable.
-let i = 0;
-while (i <= 5) {
-    /* It's subtle, but no need to curly bracket after the if conditional 
-        because I want the single line code block to be neat and inline. 
-        i++ is next line for a reason and outside the if statement code block. */
-    if (i % 2 !== 0) console.log('World', i); 
-    i++;
-}
+// let i = 0;
+// while (i <= 5) {
+//     /* It's subtle, but no need to curly bracket after the if conditional 
+//         because I want the single line code block to be neat and inline. 
+//         i++ is next line for a reason and outside the if statement code block. */
+//     if (i % 2 !== 0) console.log('World', i); 
+//     i++;
+// }
 /* Begin a do-while loop, rarer use-case. Same need for an external
     variable but code block will always get read at lease once. */
-let j = 9;
-do {
-    if (j % 2 !== 0) console.log('Olympus.. would be that weh', j); 
-    j++;
-} while (j <= 5);
+// let j = 9;
+// do {
+//     if (j % 2 !== 0) console.log('Olympus.. would be that weh', j); 
+//     j++;
+// } while (j <= 5);
 // **************************************************************************************
 // Begin a for-in loop. Can list items in objects.
 const person = {
@@ -29,11 +29,12 @@ for (let key in person)
     /* Dot notation 'person.name' would work here but not always if it hasn't rendered yet.
         square bracket notation is more commonplace friendly */
     console.log(key, person[key]);
+//                  ***************************************************
 // Begin for-of loop.
 // Line 35 is an old way using a for-in loop through an array.
-const colors = ['red', 'green', 'blue'];
-for (let index in colors) console.log(index, colors[index]);
-for (let color of colors) console.log(color);
+// const colors = ['red', 'green', 'blue'];
+// for (let index in colors) console.log(index, colors[index]);
+// for (let color of colors) console.log(color);
 /* SUMMARY: For-in loop: Iterates over the properties of an object.
             For-of loop: Iterates over the elements/items of an array */
 // *****************************************************************************************
@@ -184,21 +185,21 @@ function isPrime(number) {
 }
 // ~~~~~~~~~~~~~~~Lessons continue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Exercise #12: Address Object
-const address = {
+const addy = {
     street: '123 somewhere st',
     city: 'b',
     zipcode: 54321,
 };
-function showAddress(address) {
-    for (let key in address)
-        console.log(key, address[key]);
+function showAddress(addy) {
+    for (let key in addy)
+        console.log(key, addy[key]);
 }
 // showAddress(address); // Call the function
 
 // Exercise #13 Factory vs Constructor
 // Factory functions return objects
-let addy1 = createAddress('a', 'b', 'c'); // this completes the factory function
-console.log(addy1);
+let address = createAddress('a', 'b', 'c');
+// console.log(address);
 function createAddress(street, city, zipcode) {
     return {
         street,
@@ -207,8 +208,8 @@ function createAddress(street, city, zipcode) {
     };
 }
 // Constructor function (Watch that PascalCase convention)
-let addy2 = new Address('a', 'b', 'c'); // this completes the constructor function
-console.log(addy2);
+let address1 = new Address('a', 'b', 'c');
+console.log(address1);
 function Address(street, city, zipcode) {
     this.street = street;
     this.city = city;
