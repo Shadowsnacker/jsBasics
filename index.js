@@ -215,12 +215,13 @@ function Address(street, city, zipcode) {
     this.city = city;
     this.zipcode = zipcode;
 }
-// Exercise #14
+// Exercise #14: Object Equality
 let address2 = new Address('a', 'b', 'c');
 let address3 = address1;
 console.log(areEqual(address1, address2));
 console.log(areSame(address1, address2));
 console.log(areSame(address1, address3));
+
 function areEqual(address1, address2) { // Are properties equal
     return address1.street === address2.street &&
         address1.city === address2.city &&
@@ -231,3 +232,15 @@ function areSame(address1, address2) { // Are the object locations equal
 }
 
 // Exercise #15
+let post = {
+    title: 'a',
+    body: 'b',
+    author: 'c',
+    views: 10,
+    comments: [
+        {author: '1', body: '2'},
+        {author: '3', body: '4'},
+    ],
+    isLive: true
+};
+console.log(post);
