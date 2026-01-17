@@ -20,216 +20,216 @@
 //     j++;
 // } while (j <= 5);
 // **************************************************************************************
-// Begin a for-in loop. Can list items in objects.
-const person = {
-    name: 'Jeremy',
-    age: 36,
-}
-for (let key in person)
-    /* Dot notation 'person.name' would work here but not always if it hasn't rendered yet.
-        square bracket notation is more commonplace friendly */
-    console.log(key, person[key]);
-//                  ***************************************************
-// Begin for-of loop.
-// Line 35 is an old way using a for-in loop through an array.
-// const colors = ['red', 'green', 'blue'];
-// for (let index in colors) console.log(index, colors[index]);
-// for (let color of colors) console.log(color);
-/* SUMMARY: For-in loop: Iterates over the properties of an object.
-            For-of loop: Iterates over the elements/items of an array */
-// *****************************************************************************************
-// Exercise #1
-let number = max(3, 4);
-console.log(number);
-function max (a, b){
-    /* if (a < b) return a;
-    return b; */
-    // Alternatively instead of lines 43 & 44, use the Ternary/Conditional Operator
-    return (a > b) ? a : b;
-}
-// Exercise #2
-console.log(isLandscape(45, 30));
-function isLandscape(width, height){
-    return (width > height);
-}
-// Exercise #3: fizzbuzz!
-/* Divisable by 3: fizz
-    Divisable by 5: buzz
-    Divisable by both: fizzbuzz
-    Any other number simplys prints itself
-    If NaN: console.log("Not a number") */
-const output = fizzbuzz(30);
-console.log(output);
-function fizzbuzz(input) {
-    if (typeof input !== 'number'){
-        return NaN;
-    }
-    if (input <= 0){
-        alert('Bigger than zero please');
-        return 'Positive integers only';
-    }
-    if ((input % 3 === 0) && (input % 5 === 0)){
-        return 'FizzBuzz';
-    }
-    if (input % 3 === 0){
-        return 'Fizz';
-    }
-    if (input % 5 === 0){
-        return 'Buzz';
-    }
-    return input;
-}
-// Exercise #4
-// Speed limit is 70. console.log('ok') if driving under 1 point.
-// Every 5 over 70 adds 1 point.
-// Once 12 points is reached, suspend liscense  
-checkSpeed(130);
-function checkSpeed(speed) {
-    const speedLimit = 70;
-    const kmPerPoint = 5;
-    if (speed < speedLimit + kmPerPoint){ // Changed the magic numer(70) to a dynamic reference point
-        console.log('ok');
-        return; // Added a return here so that I can delete the "else" code block format below to tighten things up further
-    }
-//  else {  // This would also allow to take out extra indentations below for easier code reading.
-    const points = Math.floor((speed - speedLimit) / kmPerPoint);
-    if (points >= 12)
-        console.log('License suspended');
-    else
-        console.log('Points: ', points);
-}
-// // Exercise #5 Odd or even
-// showNumbers(10);
-// function showNumbers(limit) {
-//     for (let i = 0; i <= limit; i++){
-//         // if (i % 2 === 0) console.log(i, "Even");
-//         // else console.log(i, "Odd");               
-//         // We could do lines 103 & 104 but a ternary operator below is cleaner
-//         const message = (i % 2 === 0) ? 'Even' : 'Odd';
-//         console.log(i, message);
+// // Begin a for-in loop. Can list items in objects.
+// const person = {
+//     name: 'Jeremy',
+//     age: 36,
+// }
+// for (let key in person)
+//     /* Dot notation 'person.name' would work here but not always if it hasn't rendered yet.
+//         square bracket notation is more commonplace friendly */
+//     console.log(key, person[key]);
+// //                  ***************************************************
+// // Begin for-of loop.
+// // Line 35 is an old way using a for-in loop through an array.
+// // const colors = ['red', 'green', 'blue'];
+// // for (let index in colors) console.log(index, colors[index]);
+// // for (let color of colors) console.log(color);
+// /* SUMMARY: For-in loop: Iterates over the properties of an object.
+//             For-of loop: Iterates over the elements/items of an array */
+// // *****************************************************************************************
+// // Exercise #1
+// let number = max(3, 4);
+// console.log(number);
+// function max (a, b){
+//     /* if (a < b) return a;
+//     return b; */
+//     // Alternatively instead of lines 43 & 44, use the Ternary/Conditional Operator
+//     return (a > b) ? a : b;
+// }
+// // Exercise #2
+// console.log(isLandscape(45, 30));
+// function isLandscape(width, height){
+//     return (width > height);
+// }
+// // Exercise #3: fizzbuzz!
+// /* Divisable by 3: fizz
+//     Divisable by 5: buzz
+//     Divisable by both: fizzbuzz
+//     Any other number simplys prints itself
+//     If NaN: console.log("Not a number") */
+// const output = fizzbuzz(30);
+// console.log(output);
+// function fizzbuzz(input) {
+//     if (typeof input !== 'number'){
+//         return NaN;
+//     }
+//     if (input <= 0){
+//         alert('Bigger than zero please');
+//         return 'Positive integers only';
+//     }
+//     if ((input % 3 === 0) && (input % 5 === 0)){
+//         return 'FizzBuzz';
+//     }
+//     if (input % 3 === 0){
+//         return 'Fizz';
+//     }
+//     if (input % 5 === 0){
+//         return 'Buzz';
+//     }
+//     return input;
+// }
+// // Exercise #4
+// // Speed limit is 70. console.log('ok') if driving under 1 point.
+// // Every 5 over 70 adds 1 point.
+// // Once 12 points is reached, suspend liscense  
+// checkSpeed(130);
+// function checkSpeed(speed) {
+//     const speedLimit = 70;
+//     const kmPerPoint = 5;
+//     if (speed < speedLimit + kmPerPoint){ // Changed the magic numer(70) to a dynamic reference point
+//         console.log('ok');
+//         return; // Added a return here so that I can delete the "else" code block format below to tighten things up further
+//     }
+// //  else {  // This would also allow to take out extra indentations below for easier code reading.
+//     const points = Math.floor((speed - speedLimit) / kmPerPoint);
+//     if (points >= 12)
+//         console.log('License suspended');
+//     else
+//         console.log('Points: ', points);
+// }
+// // // Exercise #5 Odd or even
+// // showNumbers(10);
+// // function showNumbers(limit) {
+// //     for (let i = 0; i <= limit; i++){
+// //         // if (i % 2 === 0) console.log(i, "Even");
+// //         // else console.log(i, "Odd");               
+// //         // We could do lines 103 & 104 but a ternary operator below is cleaner
+// //         const message = (i % 2 === 0) ? 'Even' : 'Odd';
+// //         console.log(i, message);
+// //     }
+// // }
+// // Exercise #6 Count number of 'truthy' values in an array
+// const array = [0, null, undefined, '', 1, 2, 3];
+// console.log(countTruthy(array));
+// function countTruthy(array) {
+//     let n = 0;
+//     for (let value of array){  // The trick of this whole thing is a FOR-OF loop. Review ^
+//         if (value) 
+//             n++;
+//     }
+//     return n;
+// }
+// // Exercise #7
+// const movie = {
+//     title: 'a',
+//     releaseYear: 2018,
+//     rating: 4.5,
+//     director: 'b',
+// }
+// showProperties(movie);
+// function showProperties(objValue) {
+//     // Note the single line useage trimming down extra brackets!
+//     for (let key in objValue)
+//         if (typeof objValue[key] === 'string')
+//             console.log(key + ': ' + objValue[key]);
+//             // console.log(`${key}: ${objValue[key]}`); // or to format the semicolon in the output for style
+// }
+// // Exercise #8 Summing together a limit's multiples
+// // console.log(sum(10));
+// function sum(limit) {
+//     let sum = 0;
+//     for (let i = 0; i <= limit; i++)
+//         if (i % 3 === 0 || i % 5 === 0)
+//             sum += i;
+//     return sum;
+// }
+// // Exercise #9
+// const marks = [80, 80, 50];
+// // console.log(calculateGrade(marks));
+// function calculateGrade(mark) {
+//     const average = calculateAverage(mark); // This line is the trick that segregates functions 
+//     if (average < 60) return 'F';
+//     if (average < 70) return 'D';
+//     if (average < 80) return 'C';
+//     if (average < 90) return 'B';
+//     return 'A';
+// } // These two function were once together, but it's best to split up jobs as simply as possible
+// function calculateAverage(array) {
+//     let grade = 0;
+//     for (let x of array)
+//         grade += x;
+//     return grade / array.length;
+// }
+// // Exercise #10
+// // stars(5);
+// function stars(rows) {
+//     for (let i = 0; i < rows; i++){
+//         let line = '';
+//         for (let j = 0; j <= i; j++)
+//             line += '*';
+//         console.log(line);
 //     }
 // }
-// Exercise #6 Count number of 'truthy' values in an array
-const array = [0, null, undefined, '', 1, 2, 3];
-console.log(countTruthy(array));
-function countTruthy(array) {
-    let n = 0;
-    for (let value of array){  // The trick of this whole thing is a FOR-OF loop. Review ^
-        if (value) 
-            n++;
-    }
-    return n;
-}
-// Exercise #7
-const movie = {
-    title: 'a',
-    releaseYear: 2018,
-    rating: 4.5,
-    director: 'b',
-}
-showProperties(movie);
-function showProperties(objValue) {
-    // Note the single line useage trimming down extra brackets!
-    for (let key in objValue)
-        if (typeof objValue[key] === 'string')
-            console.log(key + ': ' + objValue[key]);
-            // console.log(`${key}: ${objValue[key]}`); // or to format the semicolon in the output for style
-}
-// Exercise #8 Summing together a limit's multiples
-// console.log(sum(10));
-function sum(limit) {
-    let sum = 0;
-    for (let i = 0; i <= limit; i++)
-        if (i % 3 === 0 || i % 5 === 0)
-            sum += i;
-    return sum;
-}
-// Exercise #9
-const marks = [80, 80, 50];
-// console.log(calculateGrade(marks));
-function calculateGrade(mark) {
-    const average = calculateAverage(mark); // This line is the trick that segregates functions 
-    if (average < 60) return 'F';
-    if (average < 70) return 'D';
-    if (average < 80) return 'C';
-    if (average < 90) return 'B';
-    return 'A';
-} // These two function were once together, but it's best to split up jobs as simply as possible
-function calculateAverage(array) {
-    let grade = 0;
-    for (let x of array)
-        grade += x;
-    return grade / array.length;
-}
-// Exercise #10
-// stars(5);
-function stars(rows) {
-    for (let i = 0; i < rows; i++){
-        let line = '';
-        for (let j = 0; j <= i; j++)
-            line += '*';
-        console.log(line);
-    }
-}
-// Exercise #11
-// showPrimes(20);
-function showPrimes(limit) {
-    for (let number = 2; number <= limit; number++)
-        if (isPrime(number)) console.log(number);
-}
-function isPrime(number) {
-    for (let factor = 2; factor < number; factor++) // This line is brilliant
-        if (number % factor === 0)
-            return false;
-    return true;
-}
-// ~~~~~~~~~~~~~~~Lessons continue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Exercise #12: Address Object
-const addy = {
-    street: '123 somewhere st',
-    city: 'b',
-    zipcode: 54321,
-};
-function showAddress(addy) {
-    for (let key in addy)
-        console.log(key, addy[key]);
-}
-// showAddress(address); // Call the function
+// // Exercise #11
+// // showPrimes(20);
+// function showPrimes(limit) {
+//     for (let number = 2; number <= limit; number++)
+//         if (isPrime(number)) console.log(number);
+// }
+// function isPrime(number) {
+//     for (let factor = 2; factor < number; factor++) // This line is brilliant
+//         if (number % factor === 0)
+//             return false;
+//     return true;
+// }
+// // ~~~~~~~~~~~~~~~Lessons continue~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// // Exercise #12: Address Object
+// const addy = {
+//     street: '123 somewhere st',
+//     city: 'b',
+//     zipcode: 54321,
+// };
+// function showAddress(addy) {
+//     for (let key in addy)
+//         console.log(key, addy[key]);
+// }
+// // showAddress(address); // Call the function
 
-// Exercise #13 Factory vs Constructor
-// Factory functions return objects
-let address = createAddress('a', 'b', 'c');
-// console.log(address);
-function createAddress(street, city, zipcode) {
-    return {
-        street,
-        city,
-        zipcode,
-    };
-}
-// Constructor function (Watch that PascalCase convention)
-let address1 = new Address('a', 'b', 'c');
-console.log(address1);
-function Address(street, city, zipcode) {
-    this.street = street;
-    this.city = city;
-    this.zipcode = zipcode;
-}
-// Exercise #14: Object Equality
-let address2 = new Address('a', 'b', 'c');
-let address3 = address1;
-console.log(areEqual(address1, address2));
-console.log(areSame(address1, address2));
-console.log(areSame(address1, address3));
+// // Exercise #13 Factory vs Constructor
+// // Factory functions return objects
+// let address = createAddress('a', 'b', 'c');
+// // console.log(address);
+// function createAddress(street, city, zipcode) {
+//     return {
+//         street,
+//         city,
+//         zipcode,
+//     };
+// }
+// // Constructor function (Watch that PascalCase convention)
+// let address1 = new Address('a', 'b', 'c');
+// console.log(address1);
+// function Address(street, city, zipcode) {
+//     this.street = street;
+//     this.city = city;
+//     this.zipcode = zipcode;
+// }
+// // Exercise #14: Object Equality
+// let address2 = new Address('a', 'b', 'c');
+// let address3 = address1;
+// console.log(areEqual(address1, address2));
+// console.log(areSame(address1, address2));
+// console.log(areSame(address1, address3));
 
-function areEqual(address1, address2) { // Are properties equal
-    return address1.street === address2.street &&
-        address1.city === address2.city &&
-        address1.zipcode === address2.zipcode
-}
-function areSame(address1, address2) { // Are the object locations equal
-    return address1 === address2;
-}
+// function areEqual(address1, address2) { // Are properties equal
+//     return address1.street === address2.street &&
+//         address1.city === address2.city &&
+//         address1.zipcode === address2.zipcode
+// }
+// function areSame(address1, address2) { // Are the object locations equal
+//     return address1 === address2;
+// }
 
 // Exercise #15: Blog Post Object
 // let post = {
@@ -245,67 +245,110 @@ function areSame(address1, address2) { // Are the object locations equal
 // };
 // console.log(post);
 
-// Exercise #16: updating E#15 to a constructor function
-let post = new Post('a', 'b', 'c');
-console.log(post);
-function Post(title, body, author) {
-    this.title = title;
-    this.body = body;
-    this.author = author;
-    this.views = 0;
-    this.comments = [];
-    this.isLive = false;
-}
-// Exercise #17: Price Range Object like yelp
-let priceRanges = [
-    {label: '$', Tooltip: 'Inexpensive', minPerPerson: 0, maxPerPerson: 10},
-    {label: '$$', Tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20},
-    {label: '$$$', Tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 50},
-];
-let restaurants = [
-    {averagePerPerson: 5}
-];
+// // Exercise #16: updating E#15 to a constructor function
+// let post = new Post('a', 'b', 'c');
+// console.log(post);
+// function Post(title, body, author) {
+//     this.title = title;
+//     this.body = body;
+//     this.author = author;
+//     this.views = 0;
+//     this.comments = [];
+//     this.isLive = false;
+// }
+// // Exercise #17: Price Range Object like yelp
+// let priceRanges = [
+//     {label: '$', Tooltip: 'Inexpensive', minPerPerson: 0, maxPerPerson: 10},
+//     {label: '$$', Tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20},
+//     {label: '$$$', Tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 50},
+// ];
+
 // End of Object Section *****************************************************
-// Begin Arrays
-const numbers = [3, 4];
-numbers.push(5, 6);
-numbers.unshift(1, 2);
-numbers.splice(2, 0, 'a', 'b', 2); // splice(starting-index, #-of-slots-to-delete, input, ...)
-console.log(numbers);
-console.log(numbers.length);
-// Lines 277 - 280 are being called by their primitive types. Won't work for reference types(Arrays/objects)
-console.log(numbers.indexOf(2, 2)); // searches array for (element, @index) not found, 0 if element found
-console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
-console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
-console.log(numbers.includes(1)); // easier than above line, returns boolean
+// // Begin Arrays
+// const numbers = [3, 4];
+// numbers.push(5, 6);
+// numbers.unshift(1, 2);
+// numbers.splice(2, 0, 'a', 'b', 2); // splice(starting-index, #-of-slots-to-delete, input, ...)
+// console.log(numbers);
+// console.log(numbers.length);
+// // Lines 277 - 280 are being called by their primitive types. Won't work for reference types(Arrays/objects)
+// console.log(numbers.indexOf(2, 2)); // searches array for (element, @index) not found, 0 if element found
+// console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
+// console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
+// console.log(numbers.includes(1)); // easier than above line, returns boolean
 
+// const courses = [
+//     {id: 1, name: 'a'},
+//     {id: 2, name: 'b'},
+// ];
+// // Finding values via a reference type like above needs (find()) of which would need a google search for proper understanding
+// // const course = courses.find(function(courseElement) { // findIndex(...) Returns the index spot of found element otherwise a -1
+// //     return courseElement.name === 'a'; 
+// // });
+// // Alternative Arrow function below to replace line287: ... learn more about before using
+// const course = courses.find((courseElement) => courseElement.name === 'a');
+// console.log(course);
+
+// // Deleting an element from the beginning, middle, and the end of an array
+// const lastN = numbers.pop(); // pops off and returns the last element
+// console.log(numbers);
+// console.log(lastN);
+// const firstN = numbers.shift(); // pops off and returns the first element
+// console.log(numbers);
+// console.log(firstN);
+// numbers.splice(0, 3); // So begins the natural knowing 🧙‍♂️
+// console.log(numbers);
+
+// // Combing Arrays
+// const first = [1, 2, 3];
+// const second = [4, 5, 6];
+// // const combined = first.concat(second);
+// // line 308 uses the spread operator 
+// const combined = [...first, 'a', ...second, 'b'];
+// // const copy = combined.slice();
+// const copy = [...combined]
+// console.log(combined);
+
+// // Iterating over an array
+// const numbs = [1, 2, 3];
+// for (let numb of numbs)
+//     console.log(numb);
+
+// // numbs.forEach(function(number){
+// //     console.log(number);
+// // });
+// // or on line 322 one can use the arrow function.
+// numbs.forEach((number, index) => console.log(index, number));
+
+// // Joining Arrays
+// const numbs = [1, 2, 3];
+// const joined = numbs.join(',');
+// console.log(joined);
+// const message = 'This is my first message';
+// const parts = message.split(' ');
+// console.log(parts);
+// const juxtaposed = parts.join('-');
+// console.log(juxtaposed);
+
+// // Sorting primative Arrays
+// const numbers = [2, 3, 1];
+// numbers.sort();
+// console.log(numbers);
+// numbers.reverse();
+// console.log(numbers);
+// Reference type array sorting ascii sensitive
 const courses = [
-    {id: 1, name: 'a'},
-    {id: 2, name: 'b'},
+    {id: 1, name: 'Node.js'},
+    {id: 2, name: 'JavaScript'}
 ];
-// Finding values via a reference type like above needs (find()) of which would need a google search for proper understanding
-// const course = courses.find(function(courseElement) { // findIndex(...) Returns the index spot of found element otherwise a -1
-//     return courseElement.name === 'a'; 
-// });
-// Alternative Arrow function below to replace line287: ... learn more about before using
-const course = courses.find((courseElement) => courseElement.name === 'a');
-console.log(course);
-
-// Deleting an element from the beginning, middle, and the end of an array
-const lastN = numbers.pop(); // pops off and returns the last element
-console.log(numbers);
-console.log(lastN);
-const firstN = numbers.shift(); // pops off and returns the first element
-console.log(numbers);
-console.log(firstN);
-numbers.splice(0, 3); // So begins the natural knowing 🧙‍♂️
-console.log(numbers);
-
-const first = [1, 2, 3];
-const second = [4, 5, 6];
-// const combined = first.concat(second);
-// line 308 uses the spread operator 
-const combined = [...first, 'a', ...second, 'b'];
-// const copy = combined.slice();
-const copy = [...combined]
-console.log(combined);
+courses.sort(function(a, b){
+    // a < b => -1
+    // a > b => 1
+    // a === b => 0
+    const nameA = a.name.toLowerCase();
+    const nameB = b.name.toLowerCase();
+    if (nameA < nameB) return -1;
+    if (nameA > nameB) return 1;
+    return 0;
+});
+console.log(courses);
