@@ -231,16 +231,44 @@ function areSame(address1, address2) { // Are the object locations equal
     return address1 === address2;
 }
 
-// Exercise #15
-let post = {
-    title: 'a',
-    body: 'b',
-    author: 'c',
-    views: 10,
-    comments: [
-        {author: '1', body: '2'},
-        {author: '3', body: '4'},
-    ],
-    isLive: true
-};
+// Exercise #15: Blog Post Object
+// let post = {
+//     title: 'a',
+//     body: 'b',
+//     author: 'c',
+//     views: 10,
+//     comments: [
+//         {author: '1', body: '2'},
+//         {author: '3', body: '4'},
+//     ],
+//     isLive: true
+// };
+// console.log(post);
+
+// Exercise #16: updating E#15 to a constructor function
+let post = new Post('a', 'b', 'c');
 console.log(post);
+function Post(title, body, author) {
+    this.title = title;
+    this.body = body;
+    this.author = author;
+    this.views = 0;
+    this.comments = [];
+    this.isLive = false;
+}
+// Exercise #17: Price Range Object like yelp
+let priceRanges = [
+    {label: '$', Tooltip: 'Inexpensive', minPerPerson: 0, maxPerPerson: 10},
+    {label: '$$', Tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20},
+    {label: '$$$', Tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 50},
+];
+let restaurants = [
+    {averagePerPerson: 5}
+];
+// End of Object Section *****************************************************
+// Begin Arrays
+const numbers = [3, 4];
+numbers.push(5, 6);
+numbers.unshift(1, 2);
+numbers.splice(2, 0, 'a', 'b'); // splice(starting index, # of slots to delete, input, etc.)
+console.log(numbers);
