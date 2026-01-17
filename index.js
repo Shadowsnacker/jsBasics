@@ -298,5 +298,14 @@ console.log(lastN);
 const firstN = numbers.shift(); // pops off and returns the first element
 console.log(numbers);
 console.log(firstN);
-numbers.splice(0, 3);
+numbers.splice(0, 3); // So begins the natural knowing 🧙‍♂️
 console.log(numbers);
+
+const first = [1, 2, 3];
+const second = [4, 5, 6];
+// const combined = first.concat(second);
+// line 308 uses the spread operator 
+const combined = [...first, 'a', ...second, 'b'];
+// const copy = combined.slice();
+const copy = [...combined]
+console.log(combined);
