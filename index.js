@@ -270,5 +270,10 @@ let restaurants = [
 const numbers = [3, 4];
 numbers.push(5, 6);
 numbers.unshift(1, 2);
-numbers.splice(2, 0, 'a', 'b'); // splice(starting index, # of slots to delete, input, etc.)
+numbers.splice(2, 0, 'a', 'b', 2); // splice(starting index, # of slots to delete, input, etc.)
 console.log(numbers);
+console.log(numbers.length);
+console.log(numbers.indexOf(2, 2)); // searches array for (element, @index) not found, 0 if element found
+console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
+console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
+console.log(numbers.includes(1)); // easier than above line, returns boolean
