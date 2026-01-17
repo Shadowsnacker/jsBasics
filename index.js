@@ -270,10 +270,33 @@ let restaurants = [
 const numbers = [3, 4];
 numbers.push(5, 6);
 numbers.unshift(1, 2);
-numbers.splice(2, 0, 'a', 'b', 2); // splice(starting index, # of slots to delete, input, etc.)
+numbers.splice(2, 0, 'a', 'b', 2); // splice(starting-index, #-of-slots-to-delete, input, ...)
 console.log(numbers);
 console.log(numbers.length);
+// Lines 277 - 280 are being called by their primitive types. Won't work for reference types(Arrays/objects)
 console.log(numbers.indexOf(2, 2)); // searches array for (element, @index) not found, 0 if element found
 console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
 console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
 console.log(numbers.includes(1)); // easier than above line, returns boolean
+
+const courses = [
+    {id: 1, name: 'a'},
+    {id: 2, name: 'b'},
+];
+// Finding values via a reference type like above needs (find()) of which would need a google search for proper understanding
+// const course = courses.find(function(courseElement) { // findIndex(...) Returns the index spot of found element otherwise a -1
+//     return courseElement.name === 'a'; 
+// });
+// Alternative Arrow function below to replace line287: ... learn more about before using
+const course = courses.find((courseElement) => courseElement.name === 'a');
+console.log(course);
+
+// Deleting an element from the beginning, middle, and the end of an array
+const lastN = numbers.pop(); // pops off and returns the last element
+console.log(numbers);
+console.log(lastN);
+const firstN = numbers.shift(); // pops off and returns the first element
+console.log(numbers);
+console.log(firstN);
+numbers.splice(0, 3);
+console.log(numbers);
