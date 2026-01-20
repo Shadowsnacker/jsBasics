@@ -366,11 +366,15 @@
 //     return value >= 0;
 // });
 // console.log(atLeastOnePositive);
-
 // // Filtered Arrays
 // const filtered = numbers.filter(function(value){
 //     return value >= 0;
 // });
 const filtered = numbers.filter(n => n >= 0); // or I can learn this arrow operator instead of line 371.
-
 console.log(filtered);
+// // Can map elements of an array into something else
+// const items = filtered.map(n => '<li>'+ n +'</li>');
+// const html = '<ul>'+ items.join('') +'</ul>';
+// console.log(html);
+const items = filtered.map(n => ({value: n}));
+console.log(items);
