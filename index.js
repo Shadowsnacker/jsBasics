@@ -353,16 +353,16 @@
 // });
 // console.log(courses);
 
-// 2 new methods in javascript: every, some
-const numbers = [1, -1, 2, 3];
-const allPositive = numbers.every(function(value){
-    return value >= 0;
-});
-console.log(allPositive);
-// every() checks through all elements until untue
-// some() checks through the first element to see if true/untrue
-const numb = numbers;
-const atLeastOnePositive = numbers.some(function(value){
-    return value >= 0;
-});
-console.log(atLeastOnePositive);
+// // 2 new methods in javascript: every, some
+// const numbers = [1, -1, 2, 3];
+// const allPositive = numbers.every(function(value){
+//     return value >= 0;
+// });
+// console.log(allPositive);
+// // every() checks through all elements until untue
+// // some() checks through the first element to see if true/untrue
+// const numb = numbers;
+// const atLeastOnePositive = numbers.some(function(value){
+//     return value >= 0;
+// });
+// console.log(atLeastOnePositive);
