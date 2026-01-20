@@ -355,26 +355,31 @@
 
 // // 2 new methods in javascript: every, some
  const numbers = [1, -1, 2, 3];
-// const allPositive = numbers.every(function(value){
-//     return value >= 0;
-// });
-// console.log(allPositive);
-// // every() checks through all elements until untue
-// // some() checks through the first element to see if true/untrue
-// const numb = numbers;
-// const atLeastOnePositive = numbers.some(function(value){
-//     return value >= 0;
-// });
-// console.log(atLeastOnePositive);
-// // Filtered Arrays
-// const filtered = numbers.filter(function(value){
-//     return value >= 0;
-// });
-const filtered = numbers.filter(n => n >= 0); // or I can learn this arrow operator instead of line 371.
-console.log(filtered);
-// // Can map elements of an array into something else
-// const items = filtered.map(n => '<li>'+ n +'</li>');
-// const html = '<ul>'+ items.join('') +'</ul>';
-// console.log(html);
-const items = filtered.map(n => ({value: n}));
+// // const allPositive = numbers.every(function(value){
+// //     return value >= 0;
+// // });
+// // console.log(allPositive);
+// // // every() checks through all elements until untue
+// // // some() checks through the first element to see if true/untrue
+// // const numb = numbers;
+// // const atLeastOnePositive = numbers.some(function(value){
+// //     return value >= 0;
+// // });
+// // console.log(atLeastOnePositive);
+// // // Filtered Arrays
+// // const filtered = numbers.filter(function(value){
+// //     return value >= 0;
+// // });
+// const filtered = numbers.filter(n => n >= 0); // or I can learn this arrow operator instead of line 371.
+// console.log(filtered);
+// // // Can map elements of an array into something else
+// // const items = filtered.map(n => '<li>'+ n +'</li>');
+// // const html = '<ul>'+ items.join('') +'</ul>';
+// // console.log(html);
+// const items = filtered.map(n => ({value: n}));
+const items = numbers
+    .filter(n => n >= 0)
+    .map(n => ({value: n}))
+    .filter(obj => obj.value > 1)
+    .map(obj => obj.value);
 console.log(items);
