@@ -337,18 +337,32 @@
 // numbers.reverse();
 // console.log(numbers);
 // Reference type array sorting ascii sensitive
-const courses = [
-    {id: 1, name: 'Node.js'},
-    {id: 2, name: 'JavaScript'}
-];
-courses.sort(function(a, b){
-    // a < b => -1
-    // a > b => 1
-    // a === b => 0
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-    if (nameA < nameB) return -1;
-    if (nameA > nameB) return 1;
-    return 0;
+// const courses = [
+//     {id: 1, name: 'Node.js'},
+//     {id: 2, name: 'JavaScript'}
+// ];
+// courses.sort(function(a, b){
+//     // a < b => -1
+//     // a > b => 1
+//     // a === b => 0
+//     const nameA = a.name.toLowerCase();
+//     const nameB = b.name.toLowerCase();
+//     if (nameA < nameB) return -1;
+//     if (nameA > nameB) return 1;
+//     return 0;
+// });
+// console.log(courses);
+
+// 2 new methods in javascript: every, some
+const numbers = [1, -1, 2, 3];
+const allPositive = numbers.every(function(value){
+    return value >= 0;
 });
-console.log(courses);
+console.log(allPositive);
+// every() checks through all elements until untue
+// some() checks through the first element to see if true/untrue
+const numb = numbers;
+const atLeastOnePositive = numbers.some(function(value){
+    return value >= 0;
+});
+console.log(atLeastOnePositive);
