@@ -354,7 +354,7 @@
 // console.log(courses);
 
 // // 2 new methods in javascript: every, some
-// const numbers = [1, -1, 2, 3];
+ const numbers = [1, -1, 2, 3];
 // const allPositive = numbers.every(function(value){
 //     return value >= 0;
 // });
@@ -366,3 +366,11 @@
 //     return value >= 0;
 // });
 // console.log(atLeastOnePositive);
+
+// // Filtered Arrays
+// const filtered = numbers.filter(function(value){
+//     return value >= 0;
+// });
+const filtered = numbers.filter(n => n >= 0); // or I can learn this arrow operator instead of line 371.
+
+console.log(filtered);
