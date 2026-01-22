@@ -384,12 +384,42 @@
 //     .map(obj => obj.value);
 // console.log(items);
 
-// // Reducing an Array
-const numbers = [1, 2, -1, 3];
-// let sum = 0;
-// for(let n of numbers)
-//     sum += n;
-const sum = numbers.reduce(
-    (accumulator, currentValue) => accumulator + currentValue 
-); // }, 0); // Don't forget the second parameter for the reduce method that is the index starting point, 0 if not stated
-console.log(sum);
+// // // Reducing an Array. Line 389-391 old way to code? 392 new way.
+// const numbers = [1, 2, -1, 3];
+// // let sum = 0;
+// // for(let n of numbers)
+// //     sum += n;
+// const sum = numbers.reduce(
+//     (accumulator, currentValue) => accumulator + currentValue
+// ); // }, 0); // Don't forget the second parameter for the reduce method that is the index starting point, 0 if not stated
+// console.log(sum);
+
+// Exercises Array Section: 
+// // #1
+// const numbers = arrayFromRange(1, 4);
+// console.log(numbers);
+// function arrayFromRange(min, max) {
+//     const output = [];
+//     for(let i = min; i <= max; i++)
+//         output.push(i);
+//     return output;
+// }
+
+// Exercise #2
+const numbers = [1, 2, 3, 4, 5];
+console.log(includes(numbers, 1)); /* 'includes' by itself is a built in method and is easy way
+                                    to see if element is in array. Make your own below */
+function includes(array, searchedElements) {
+    for (let element of array){
+        if (element === searchedElements)
+            return true;
+    return false;
+    }
+}
+
+// Exercise #3
+// Exercise #4
+// Exercise #5
+// Exercise #6
+// Exercise #7
+
