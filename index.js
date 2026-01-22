@@ -282,10 +282,10 @@
 //     {id: 2, name: 'b'},
 // ];
 // // Finding values via a reference type like above needs (find()) of which would need a google search for proper understanding
-// // const course = courses.find(function(courseElement) { // findIndex(...) Returns the index spot of found element otherwise a -1
+// // const course = courses.find(function(courseElement) { // findIndex() Returns the index spot of found element otherwise a -1
 // //     return courseElement.name === 'a'; 
 // // });
-// // Alternative Arrow function below to replace line287: ... learn more about before using
+// // Alternative Arrow function below to replace line287: Learn more before using****************
 // const course = courses.find((courseElement) => courseElement.name === 'a');
 // console.log(course);
 
@@ -355,31 +355,41 @@
 
 // // 2 new methods in javascript: every, some
  const numbers = [1, -1, 2, 3];
-// // const allPositive = numbers.every(function(value){
-// //     return value >= 0;
-// // });
-// // console.log(allPositive);
-// // // every() checks through all elements until untue
-// // // some() checks through the first element to see if true/untrue
-// // const numb = numbers;
-// // const atLeastOnePositive = numbers.some(function(value){
-// //     return value >= 0;
-// // });
-// // console.log(atLeastOnePositive);
-// // // Filtered Arrays
-// // const filtered = numbers.filter(function(value){
-// //     return value >= 0;
-// // });
-// const filtered = numbers.filter(n => n >= 0); // or I can learn this arrow operator instead of line 371.
-// console.log(filtered);
-// // // Can map elements of an array into something else
-// // const items = filtered.map(n => '<li>'+ n +'</li>');
-// // const html = '<ul>'+ items.join('') +'</ul>';
-// // console.log(html);
-// const items = filtered.map(n => ({value: n}));
-const items = numbers
-    .filter(n => n >= 0)
-    .map(n => ({value: n}))
-    .filter(obj => obj.value > 1)
-    .map(obj => obj.value);
-console.log(items);
+// // // const allPositive = numbers.every(function(value){
+// // //     return value >= 0;
+// // // });
+// // // console.log(allPositive);
+// // // // every() checks through all elements until untue
+// // // // some() checks through the first element to see if true/untrue
+// // // const numb = numbers;
+// // // const atLeastOnePositive = numbers.some(function(value){
+// // //     return value >= 0;
+// // // });
+// // // console.log(atLeastOnePositive);
+// // // // Filtered Arrays
+// // // const filtered = numbers.filter(function(value){
+// // //     return value >= 0;
+// // // });
+// // const filtered = numbers.filter(n => n >= 0); // or I can learn this arrow operator instead of line 371.
+// // console.log(filtered);
+// // // // Can map elements of an array into something else
+// // // const items = filtered.map(n => '<li>'+ n +'</li>');
+// // // const html = '<ul>'+ items.join('') +'</ul>';
+// // // console.log(html);
+// // const items = filtered.map(n => ({value: n}));
+// const items = numbers
+//     .filter(n => n >= 0)
+//     .map(n => ({value: n}))
+//     .filter(obj => obj.value > 1)
+//     .map(obj => obj.value);
+// console.log(items);
+
+// // Reducing an Array
+// let sum = 0;
+// for(let n of numbers)
+//     sum += n;
+
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+}, 0); // Don't forget the second parameter for the reduce method
+console.log(sum);
