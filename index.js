@@ -354,7 +354,7 @@
 // console.log(courses);
 
 // // 2 new methods in javascript: every, some
- const numbers = [1, -1, 2, 3];
+// // // const numbers = [1, -1, 2, 3];
 // // // const allPositive = numbers.every(function(value){
 // // //     return value >= 0;
 // // // });
@@ -385,11 +385,11 @@
 // console.log(items);
 
 // // Reducing an Array
+const numbers = [1, 2, -1, 3];
 // let sum = 0;
 // for(let n of numbers)
 //     sum += n;
-
-const sum = numbers.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-}, 0); // Don't forget the second parameter for the reduce method
+const sum = numbers.reduce(
+    (accumulator, currentValue) => accumulator + currentValue 
+); // }, 0); // Don't forget the second parameter for the reduce method that is the index starting point, 0 if not stated
 console.log(sum);
