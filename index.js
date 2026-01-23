@@ -262,30 +262,30 @@
 //     {label: '$$', Tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20},
 //     {label: '$$$', Tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 50},
 // ];
-
 // End of Object Section *****************************************************
-// // Begin Arrays
-// const numbers = [3, 4];
-// numbers.push(5, 6);
-// numbers.unshift(1, 2);
-// numbers.splice(2, 0, 'a', 'b', 2); // splice(starting-index, #-of-slots-to-delete, input, ...)
-// console.log(numbers);
-// console.log(numbers.length);
-// // Lines 277 - 280 are being called by their primitive types. Won't work for reference types(Arrays/objects)
-// console.log(numbers.indexOf(2, 2)); // searches array for (element, @index) not found, 0 if element found
-// console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
-// console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
-// console.log(numbers.includes(1)); // easier than above line, returns boolean
+
+// Begin Arrays******************************************
+const numbers = [3, 4];
+numbers.push(5, 6);
+numbers.unshift(1, 2);
+numbers.splice(2, 0, 'a', 'b', 2); // splice(starting-index, #-of-slots-to-delete, input, input, etc.)
+console.log(numbers);
+console.log(numbers.length);
+// Lines 275 - 278 are being called by their primitive types. Won't work for reference types(Arrays/objects)
+console.log(numbers.indexOf('b')); // searches array for (element, @index) not found, 0 if element found
+console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
+console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
+console.log(numbers.includes(1)); // easier than above line, returns boolean
 
 // const courses = [
 //     {id: 1, name: 'a'},
 //     {id: 2, name: 'b'},
 // ];
-// // Finding values via a reference type like above needs (find()) of which would need a google search for proper understanding
-// // const course = courses.find(function(courseElement) { // findIndex() Returns the index spot of found element otherwise a -1
+// // // Finding values via a reference type like above needs (find()) of which would need a google search for proper understanding
+// // const course = courses.find(function(courseElement) {    // findIndex() Returns the index spot of found element otherwise a -1
 // //     return courseElement.name === 'a'; 
 // // });
-// // Alternative Arrow function below to replace line287: Learn more before using****************
+// // // Alternative Arrow function below to replace line285: **********
 // const course = courses.find((courseElement) => courseElement.name === 'a');
 // console.log(course);
 
@@ -296,8 +296,8 @@
 // const firstN = numbers.shift(); // pops off and returns the first element
 // console.log(numbers);
 // console.log(firstN);
-// numbers.splice(0, 3); // So begins the natural knowing 🧙‍♂️
-// console.log(numbers);
+numbers.splice(0, 3);
+console.log(numbers);
 
 // // Combing Arrays
 // const first = [1, 2, 3];
@@ -418,20 +418,37 @@
 // }
 
 // Exercise #3
-// Opposite of filtering out, Exceptions. Read carefully, easy but subtle.
-const numbers = [1, 2, 3, 1, 4, 5, 2, 6];
-const output = except(numbers, [1, 2, 3, 4]);
-console.log(output);
-function except(numbs, arrayOfExluded) {
-    const output = [];
-    for(let element of numbs)
-        if(!arrayOfExluded.includes(element))
-            output.push(element);
-    return output;
-}
+// // Opposite of filtering out, Exceptions. Read carefully, easy but subtle.
+// const numbers = [1, 2, 3, 1, 4, 5, 2, 6];
+// const output = except(numbers, [1, 2, 3, 4]);
+// console.log(output);
+// function except(numbs, arrayOfExluded) {
+//     const output = [];
+//     for(let element of numbs)
+//         if(!arrayOfExluded.includes(element))
+//             output.push(element);
+//     return output;
+// }
 
 // Exercise #4
+// Moving an element in an array
+// const numbers = [1, 2, 3, 4, 5];
+// const output = move(numbers, 0, 0);
+// console.log(output);
+// function move(array, index, offset) {
+//     for(let numbs of array){
+//         if(offset >= 0){
+            
+//         }
+//     }
+// }
+
+
 // Exercise #5
+
+
 // Exercise #6
+
+
 // Exercise #7
 
