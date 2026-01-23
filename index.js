@@ -265,17 +265,17 @@
 // End of Object Section *****************************************************
 
 // Begin Arrays******************************************
-const numbers = [3, 4];
-numbers.push(5, 6);
-numbers.unshift(1, 2);
-numbers.splice(2, 0, 'a', 'b', 2); // splice(starting-index, #-of-slots-to-delete, input, input, etc.)
-console.log(numbers);
-console.log(numbers.length);
-// Lines 275 - 278 are being called by their primitive types. Won't work for reference types(Arrays/objects)
-console.log(numbers.indexOf('b')); // searches array for (element, @index) not found, 0 if element found
-console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
-console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
-console.log(numbers.includes(1)); // easier than above line, returns boolean
+// const numbers = [3, 4];
+// numbers.push(5, 6);
+// numbers.unshift(1, 2);
+// numbers.splice(2, 0, 'a', 'b', 2); // splice(starting-index, #-of-slots-to-delete, input, input, etc.)
+// console.log(numbers);
+// console.log(numbers.length);
+// // Lines 275 - 278 are being called by their primitive types. Won't work for reference types(Arrays/objects)
+// console.log(numbers.indexOf('b')); // searches array for (element, @index) not found, 0 if element found
+// console.log(numbers.lastIndexOf(2)); // returns index of last repeated element
+// console.log(numbers.indexOf(1) !== -1); // forces boolean or just do next line
+// console.log(numbers.includes(1)); // easier than above line, returns boolean
 
 // const courses = [
 //     {id: 1, name: 'a'},
@@ -296,8 +296,8 @@ console.log(numbers.includes(1)); // easier than above line, returns boolean
 // const firstN = numbers.shift(); // pops off and returns the first element
 // console.log(numbers);
 // console.log(firstN);
-numbers.splice(0, 3);
-console.log(numbers);
+// numbers.splice(0, 3);
+// console.log(numbers);
 
 // // Combing Arrays
 // const first = [1, 2, 3];
@@ -431,16 +431,20 @@ console.log(numbers);
 // }
 
 // Exercise #4
-// Moving an element in an array
+// // Moving an element in an array
 // const numbers = [1, 2, 3, 4, 5];
-// const output = move(numbers, 0, 0);
+// const output = move(numbers, 2, -1);
 // console.log(output);
 // function move(array, index, offset) {
-//     for(let numbs of array){
-//         if(offset >= 0){
-            
-//         }
+//     const position = index + offset;
+//     if (position >= array.length || position < 0){
+//         console.error('Invalid Offset.');
+//         return;
 //     }
+//     const output = [...array]; // clone of numbers array line 435 using a spread
+//     const element = output.splice(index, 1)[0]; // [0] is the first element of the returned array of the spliced array
+//     output.splice(position, 0, element);
+//     return output;
 // }
 
 
