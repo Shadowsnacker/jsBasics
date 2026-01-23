@@ -405,19 +405,31 @@
 //     return output;
 // }
 
-// Exercise #2
-const numbers = [1, 2, 3, 4, 5];
-console.log(includes(numbers, 1)); /* 'includes' by itself is a built in method and is easy way
-                                    to see if element is in array. Make your own below */
-function includes(array, searchedElements) {
-    for (let element of array){
-        if (element === searchedElements)
-            return true;
-    return false;
-    }
-}
+// // Exercise #2
+// const numbers = [1, 2, 3, 4, 5];
+// console.log(includes(numbers, 1)); /* 'includes' by itself is a built in method and is easy way
+//                                     to see if element is in array. Make your own below */
+// function includes(array, searchedElements) {
+//     for (let element of array){
+//         if (element === searchedElements)
+//             return true;
+//     return false;
+//     }
+// }
 
 // Exercise #3
+// Opposite of filtering out, Exceptions. Read carefully, easy but subtle.
+const numbers = [1, 2, 3, 1, 4, 5, 2, 6];
+const output = except(numbers, [1, 2, 3, 4]);
+console.log(output);
+function except(numbs, arrayOfExluded) {
+    const output = [];
+    for(let element of numbs)
+        if(!arrayOfExluded.includes(element))
+            output.push(element);
+    return output;
+}
+
 // Exercise #4
 // Exercise #5
 // Exercise #6
