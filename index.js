@@ -447,8 +447,36 @@
 //     return output;
 // }
 
+// // ************************************
+// // // Arrow Function Review:
+// // const array = [1, 2, 3, 4];
+// // // 0 + 1 + 2 + 3 + 4
+// // const initialValue = 0;
+// // const sumWithInitial = array.reduce(
+// //   (accumulator, currentValue) => accumulator + currentValue,
+// //   initialValue,
+// // );
+// // console.log(sumWithInitial);
+// // // Expected output: 10
+// // ************************************
 
 // Exercise #5
+// Counting Occurences
+const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
+const count = countOccurences(numbers, 1);
+console.log(count);
+function countOccurences(array, searchElement){
+    // let count = 0;
+    // for (let numb of array)
+    //     if (numb === searchElement)
+    //         count++;
+    // return count; // old way of coding, Reduced method below with arrow function as modern way
+    return array.reduce((accumulator, current) => {
+        const occurence = (current === searchElement) ? 1 : 0;
+        console.log(accumulator, current, searchElement);
+        return accumulator + occurence;
+    }, 0);
+}
 
 
 // Exercise #6
