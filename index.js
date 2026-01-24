@@ -478,7 +478,6 @@ function countOccurences(array, searchElement){
     }, 0);
 }
 
-
 // Exercise #6
 
 
