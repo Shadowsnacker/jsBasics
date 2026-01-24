@@ -461,25 +461,36 @@
 // // ************************************
 
 // Exercise #5
-// Counting Occurences
+// // Counting Occurences
+// const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
+// const count = countOccurences(numbers, 1);
+// console.log(count);
+// function countOccurences(array, searchElement){
+//     // let count = 0;
+//     // for (let numb of array)
+//     //     if (numb === searchElement)
+//     //         count++;
+//     // return count; // old way of coding, Reduced method below with arrow function as modern way
+//     return array.reduce((accumulator, current) => {
+//         const occurence = (current === searchElement) ? 1 : 0;
+//         console.log(accumulator, current, searchElement);
+//         return accumulator + occurence;
+//     }, 0);
+// }
+
+// Exercise #6: Getting a Max value but learning the reduce method
+// When needing a single value via iterating over an array, think of the reduce method.
 const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
-const count = countOccurences(numbers, 1);
-console.log(count);
-function countOccurences(array, searchElement){
-    // let count = 0;
-    // for (let numb of array)
-    //     if (numb === searchElement)
-    //         count++;
-    // return count; // old way of coding, Reduced method below with arrow function as modern way
-    return array.reduce((accumulator, current) => {
-        const occurence = (current === searchElement) ? 1 : 0;
-        console.log(accumulator, current, searchElement);
-        return accumulator + occurence;
-    }, 0);
+const max = getMax([1, 2, 2, 1, 3, 4, 5]);
+console.log(max);
+function getMax(array) {
+    if (array.length === 0) return undefined;
+    let max = array[0];
+    for (let i = 0; i < array.length; i++)
+        if (array[i] > max)
+            max = array[i];
+    return max;
 }
-
-// Exercise #6
-
 
 // Exercise #7
 
