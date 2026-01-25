@@ -262,8 +262,8 @@
 //     {label: '$$', Tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20},
 //     {label: '$$$', Tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 50},
 // ];
-// End of Object Section ********************************
-// Begin Arrays******************************************
+/* End of Object Section ********************************
+Begin Arrays****************************************   */
 // const numbers = [3, 4];
 // numbers.push(5, 6);
 // numbers.unshift(1, 2);
@@ -511,4 +511,36 @@
 //     .reverse() // Here we desc
 //     .map(m => m.title) // maps a new array with the filtered and ordered titles
 // console.log(titles);
+/** End of Arrays**********************************************
+Begin functions detailed Dive ********************************* */
 
+/*  // Function Declaration [(THE FUNCTION CAN BE CALLED BEFORE THE DECLARATION IS DEFINED)] 
+    // Possible via "Hoisting": INTERVIEW QUESTION. The process of moving function 
+        // declarations to the top of the file, done automatically.
+    function walk(){
+        console.log('walk');
+    } // No semicolon for declarations
+*************************************************
+Function Expression: is a Named function if with a name [function NAME(){}], {(CANNOT BE CALLED BEFORE BEING DEFINED)}
+otherwise its anonymous */
+// let run = function() {
+//     console.log('run')
+// }; // Expressions DO need a semicolon at the end
+// run();
+// let move = run;
+// move();
+
+// // Every function has a special object called 'arguments' built in 
+// function sum(a, b) {
+//     console.log(arguments);
+//     reuturn a + b; // 1 + undefined = NaN
+// }
+// console.log(sum(1, 2, 3, 4, 5));
+
+function sum(a, b){
+    let total = 0;
+    for (let value of arguments) // Has its own iterator(check line 535 console.log) so a for-of loop will work here
+        total += value;
+    return total;
+}
+console.log(sum(1, 2, 3, 4, 5));
