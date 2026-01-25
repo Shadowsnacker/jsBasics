@@ -514,15 +514,14 @@ Begin Arrays****************************************   */
 /** End of Arrays**********************************************
 Begin functions detailed Dive ********************************* */
 
-/*  // Function Declaration [(THE FUNCTION CAN BE CALLED BEFORE THE DECLARATION IS DEFINED)] 
-    // Possible via "Hoisting": INTERVIEW QUESTION. The process of moving function 
-        // declarations to the top of the file, done automatically.
-    function walk(){
-        console.log('walk');
-    } // No semicolon for declarations
-*************************************************
-Function Expression: is a Named function if with a name [function NAME(){}], {(CANNOT BE CALLED BEFORE BEING DEFINED)}
-otherwise its anonymous */
+/*  Function Declaration [(THE FUNCTION CAN BE CALLED BEFORE THE DECLARATION IS DEFINED)] 
+    Possible via "Hoisting": INTERVIEW QUESTION. 
+    The process of moving function declarations to the top of the file automatically.
+                    function walk(){
+                        console.log('walk');
+                    } // No semicolon for declarations
+    Function Expression: is a NAMEd function[function NAME(){}], {(CANNOT BE CALLED BEFORE BEING DEFINED)}
+    Its called an anonymous function without a name */
 // let run = function() {
 //     console.log('run')
 // }; // Expressions DO need a semicolon at the end
@@ -536,11 +535,10 @@ otherwise its anonymous */
 //     reuturn a + b; // 1 + undefined = NaN
 // }
 // console.log(sum(1, 2, 3, 4, 5));
-
-function sum(a, b){
+function sum(){ // no parameters needed as 'arguments' is already providing them
     let total = 0;
     for (let value of arguments) // Has its own iterator(check line 535 console.log) so a for-of loop will work here
         total += value;
     return total;
 }
-console.log(sum(1, 2, 3, 4, 5));
+console.log(sum(1, 2, 3, 4, 5, 10));
