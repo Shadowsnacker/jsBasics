@@ -495,3 +495,22 @@
 // }
 
 // Exercise #7
+/* Write code that shows all movies in 2018 with rating > 4
+    Sort them by rating, Descending order
+    console.log(title). 'a' & 'b' should be shown only */
+const movies = [
+    {title: 'a', year: 2018, rating: 4.5},
+    {title: 'b', year: 2018, rating: 4.7},
+    {title: 'c', year: 2018, rating: 3},
+    {title: 'd', year: 2017, rating: 4.5},
+];
+const titles = movies
+    /* filter returns a new array, now we can chain methods
+    Careful, sort only works for #'s and strings. Yet building a conditional to return -1, 0, and 1 is bulky.
+    So for objects, create a comparison function, hence the arrow function within sort() */
+    .filter(m => m.year === 2018 && m.rating > 4)
+    .sort((a, b) => a.rating - b.rating) // returns either a +#, 0, or -# that can be order via asc or desc
+    .reverse() // Here we desc
+    .map(m => m.title) // maps a new array with the filtered and ordered titles
+console.log(titles);
+
