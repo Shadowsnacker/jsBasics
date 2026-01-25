@@ -394,7 +394,7 @@
 // ); // }, 0); // Don't forget the second parameter for the reduce method that is the index starting point, 0 if not stated
 // console.log(sum);
 
-// Exercises Array Section: 
+// // Exercises Array Section: 
 // // #1
 // const numbers = arrayFromRange(1, 4);
 // console.log(numbers);
@@ -417,7 +417,7 @@
 //     }
 // }
 
-// Exercise #3
+// // Exercise #3
 // // Opposite of filtering out, Exceptions. Read carefully, easy but subtle.
 // const numbers = [1, 2, 3, 1, 4, 5, 2, 6];
 // const output = except(numbers, [1, 2, 3, 4]);
@@ -430,7 +430,7 @@
 //     return output;
 // }
 
-// Exercise #4
+// // Exercise #4
 // // Moving an element in an array
 // const numbers = [1, 2, 3, 4, 5];
 // const output = move(numbers, 2, -1);
@@ -460,7 +460,7 @@
 // // // Expected output: 10
 // // ************************************
 
-// Exercise #5
+// // Exercise #5
 // // Counting Occurences
 // const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
 // const count = countOccurences(numbers, 1);
@@ -478,21 +478,20 @@
 //     }, 0);
 // }
 
-// Exercise #6: Getting a Max value but learning the reduce method
-// When needing a single value via iterating over an array, think of the reduce method.
-const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
-const max = getMax([1, 2, 2, 1, 3, 4, 5]);
-console.log(max);
-function getMax(array) {
-    if (array.length === 0) return undefined;
-    // Old Way
-    // let max = array[0];
-    // for (let i = 0; i < array.length; i++)
-    //     if (array[i] > max)
-    //         max = array[i];
-    // return max;
-    return array.reduce((a, b) => (a > b) ? a : b);
-}
+// // Exercise #6: Getting a Max value but learning the reduce method
+// // When needing a single value via iterating over an array, think of the reduce method.
+// const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
+// const max = getMax([1, 2, 2, 1, 3, 4, 5]);
+// console.log(max);
+// function getMax(array) {
+//     if (array.length === 0) return undefined;
+//     // Old Way
+//     // let max = array[0];
+//     // for (let i = 0; i < array.length; i++)
+//     //     if (array[i] > max)
+//     //         max = array[i];
+//     // return max;
+//     return array.reduce((a, b) => (a > b) ? a : b);
+// }
 
 // Exercise #7
-
