@@ -428,8 +428,7 @@ Begin Arrays****************************************   */
 //     return output;
 // }
 
-// // Exercise #4
-// // Moving an element in an array
+// // Exercise #4 : Moving an element in an array
 // const numbers = [1, 2, 3, 4, 5];
 // const output = move(numbers, 2, -1);
 // console.log(output);
@@ -458,8 +457,7 @@ Begin Arrays****************************************   */
 // // // Expected output: 10
 // // ************************************
 
-// // Exercise #5
-// // Counting Occurences
+// // Exercise #5: Counting Occurences
 // const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
 // const count = countOccurences(numbers, 1);
 // console.log(count);
@@ -476,20 +474,20 @@ Begin Arrays****************************************   */
 //     }, 0);
 // }
 
-// // Exercise #6: Getting a Max value but learning the reduce method
+// // Exercise #6: Learning REDUCE method by getting a max value
 // // When needing a single value via iterating over an array, think of the reduce method.
 // const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
 // const max = getMax([1, 2, 2, 1, 3, 4, 5]);
 // console.log(max);
 // function getMax(array) {
 //     if (array.length === 0) return undefined;
-//     // Old Way
+//     // Old Way next 5 lines.
 //     // let max = array[0];
 //     // for (let i = 0; i < array.length; i++)
 //     //     if (array[i] > max)
 //     //         max = array[i];
 //     // return max;
-//     return array.reduce((a, b) => (a > b) ? a : b);
+//     return array.reduce((a, b) => (a > b) ? a : b);  // ***REDUCE METHOD HERE***
 // }
 
 // // Exercise #7
@@ -512,8 +510,8 @@ Begin Arrays****************************************   */
 //     .map(m => m.title) // maps a new array with the filtered and ordered titles
 // console.log(titles);
 /** End of Arrays**********************************************
-Begin functions detailed Dive ********************************* */
 
+Begin functions detailed Dive ********************************* */
 /*  Function Declaration [(THE FUNCTION CAN BE CALLED BEFORE THE DECLARATION IS DEFINED)] 
     Possible via "Hoisting": INTERVIEW QUESTION. 
     The process of moving function declarations to the top of the file automatically.
@@ -529,16 +527,30 @@ Begin functions detailed Dive ********************************* */
 // let move = run;
 // move();
 
-// // Every function has a special object called 'arguments' built in 
-// function sum(a, b) {
-//     console.log(arguments);
-//     reuturn a + b; // 1 + undefined = NaN
+// // // Every function has a special object called 'arguments' built in 
+// // function sum(a, b) {
+// //     console.log(arguments);
+// //     reuturn a + b; // 1 + undefined = NaN
+// // }
+// // console.log(sum(1, 2, 3, 4, 5));
+// function sum(){ // no parameters needed, 'arguments' is already providing them
+//     let total = 0;
+//     for (let value of arguments) // Has its own iterator(check line 535 console.log) so a for-of loop will work here
+//         total += value;
+//     return total;
 // }
-// console.log(sum(1, 2, 3, 4, 5));
-function sum(){ // no parameters needed as 'arguments' is already providing them
-    let total = 0;
-    for (let value of arguments) // Has its own iterator(check line 535 console.log) so a for-of loop will work here
-        total += value;
-    return total;
+// console.log(sum(1, 2, 3, 4, 5, 10));
+
+/* The REST operator. 
+    Must be used as final parameter and not to be confused with the SPREAD operator even though same syntax.
+    Spread operator becomes a REST operator when used as a parameter to read an unknown number of arguments to be called.
+        Returns an array that methods can iterate over */
+// function sum(...args) {
+//     return args.reduce((a, b) => a + b);
+// }
+// console.log(sum(1, 2, 3, 4, 5, 10));
+function sum(discount, ...prices) {
+    const total = prices.reduce((a, b) => a + b);
+    return total * (1 - discount);
 }
-console.log(sum(1, 2, 3, 4, 5, 10));
+console.log(sum(0.1, 20, 30));
