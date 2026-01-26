@@ -545,12 +545,24 @@ Begin functions detailed Dive ********************************* */
     Must be used as final parameter and not to be confused with the SPREAD operator even though same syntax.
     Spread operator becomes a REST operator when used as a parameter to read an unknown number of arguments to be called.
         Returns an array that methods can iterate over */
-// function sum(...args) {
-//     return args.reduce((a, b) => a + b);
+// // function sum(...args) {
+// //     return args.reduce((a, b) => a + b);
+// // }
+// // console.log(sum(1, 2, 3, 4, 5, 10));
+// function sum(discount, ...prices) {
+//     const total = prices.reduce((a, b) => a + b);
+//     return total * (1 - discount);
 // }
-// console.log(sum(1, 2, 3, 4, 5, 10));
-function sum(discount, ...prices) {
-    const total = prices.reduce((a, b) => a + b);
-    return total * (1 - discount);
+// console.log(sum(0.1, 20, 30));
+
+// Default parameters: 
+function interest(principal, rate = 3.5, years = 5) {
+    // rate = rate || 3.5;
+    // years = years || 5;
+    // Instead of the above two line, in the function parameters you can *SEE CURRENT PARAMETER FORMAT FOR THIS FUNCTION
+    // But make sure the last parameter has the assignment or give assignments from the one assigned to the last parameter.
+    return principal * rate / 100 * years;
 }
-console.log(sum(0.1, 20, 30));
+// Don't need all arguments listed, but 'undefined' can be used as placeholder if the last parameter hasn't been assigned a value
+console.log(interest(10000)); // Example: console.log(interest(10000, undefined, 5));
+
