@@ -555,14 +555,27 @@ Begin functions detailed Dive ********************************* */
 // }
 // console.log(sum(0.1, 20, 30));
 
-// Default parameters: 
-function interest(principal, rate = 3.5, years = 5) {
-    // rate = rate || 3.5;
-    // years = years || 5;
-    // Instead of the above two line, in the function parameters you can *SEE CURRENT PARAMETER FORMAT FOR THIS FUNCTION
-    // But make sure the last parameter has the assignment or give assignments from the one assigned to the last parameter.
-    return principal * rate / 100 * years;
-}
-// Don't need all arguments listed, but 'undefined' can be used as placeholder if the last parameter hasn't been assigned a value
-console.log(interest(10000)); // Example: console.log(interest(10000, undefined, 5));
+// // Default parameters: 
+// function interest(principal, rate = 3.5, years = 5) {
+//     // rate = rate || 3.5;
+//     // years = years || 5;
+//     // Instead of the above two line, in the function parameters you can *SEE CURRENT PARAMETER FORMAT FOR THIS FUNCTION
+//     // But make sure the last parameter has the assignment or give assignments from the one assigned to the last parameter.
+//     return principal * rate / 100 * years;
+// }
+// // Don't need all arguments listed, but 'undefined' can be used as placeholder if the last parameter hasn't been assigned a value
+// console.log(interest(10000)); // Example: console.log(interest(10000, undefined, 5));
 
+// Getters and Setters:
+// Getters => Access properties
+// Setters => Change(Mutate) properties
+
+const person = {
+    firstName: 'Jeremy',
+    lastName: 'Boyd',
+    // fullName: 'Jeremy Boyd'
+    get fullName() {
+        return `${person.firstName} ${person.lastName}`;
+    }
+};
+console.log(person.fullName);
