@@ -613,4 +613,3 @@ Begin functions detailed Dive ********************************* */
 // console.log(person);
 
 // // Global vs local scopes: local scope will override a globally scoped variable name
-
