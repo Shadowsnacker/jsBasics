@@ -566,14 +566,29 @@ Begin functions detailed Dive ********************************* */
 // // Don't need all arguments listed, but 'undefined' can be used as placeholder if the last parameter hasn't been assigned a value
 // console.log(interest(10000)); // Example: console.log(interest(10000, undefined, 5));
 
-// Getters and Setters:
-// Getters => Access properties
-// Setters => Change(Mutate) properties
+// // Getters and Setters:
+// // Getters => Access properties
+// // Setters => Change(Mutate) properties
+// const person = {
+//     firstName: 'Jeremy',
+//     lastName: 'Boyd',
+//     // fullName: 'Jeremy Boyd'
+//     get fullName() {
+//         return `${person.firstName} ${person.lastName}`;
+//     },
+//     set fullName(value){  // Keep in mind this only works for strings currently, split works with strings only, etc.
+//         const parts = value.split(' ');
+//         this.firstName = parts[0];
+//         this.lastName = parts[1];
+//     }
+// };
+// person.fullName = 'John Smith';
+// console.log(person);
 
+// Try and Catch(Error handling introduction):
 const person = {
     firstName: 'Jeremy',
     lastName: 'Boyd',
-    // fullName: 'Jeremy Boyd'
     get fullName() {
         return `${person.firstName} ${person.lastName}`;
     },
