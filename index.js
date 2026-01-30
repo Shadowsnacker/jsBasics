@@ -612,4 +612,9 @@ Begin functions detailed Dive ********************************* */
 // }
 // console.log(person);
 
-// // Global vs local scopes: local scope will override a globally scoped variable name
+/* Global vs local scopes: 
+    local scope will override a globally scoped variable name
+Let vs Var:
+    let, const => block-scoped
+    var    => function-scoped, also adds itself to the window object  */
+
