@@ -618,3 +618,16 @@ Let vs Var:
     let, const => block-scoped
     var    => function-scoped, also adds itself to the window object  */
 
+/* THIS: "This" references the object that is executing the current function
+    method -> obj
+    function  -> global(window, global) */
+const video = {
+    title: "a",
+    play(){
+        console.log(this);
+    }
+};
+video.stop = function() {
+    console.log(this);
+};
+video.stop();
