@@ -620,18 +620,18 @@ Let vs Var:
 
 /* THIS: 
     "This" references the object that is executing the current function
-    method -> obj
-    non-method function -> global(window(browsers), global(node)) */
-// // const video = {
-// //     title: "a",
-// //     play(){
-// //         console.log(this);
-// //     }
-// // };
-// // video.stop = function() {
-// //     console.log(this);
-// // };
-// // video.stop();
+    1. method -> obj
+    2. non-method function -> global(window(browsers), global(node)) */
+// const video = {
+//     title: "a",
+//     play(){
+//         console.log(this);
+//     }};
+// // video.play();
+// video.stop = function() {
+//     console.log(this);
+// };
+// video.stop(); // Example of #1.
 
 // function Video(title){
 //     this.title = title;
