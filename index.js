@@ -620,10 +620,10 @@ Let vs Var:
 
 /* THIS: 
     "This" references the object that is executing the current function
-    1. method -> obj
-    2. non-method function -> global(window(browsers), global(node)) */
+    1. method -> current obj
+    2. non-method function -> global(window(browsers), global(node)) obj */
 // const video = {
-//     title: "a",
+//     title: 'a',
 //     play(){
 //         console.log(this);
 //     }};
@@ -634,10 +634,11 @@ Let vs Var:
 // video.stop(); // Example of #1.
 
 // function Video(title){
-//     this.title = title;
+//     this.title = title; // Normally 'this' references the global object, but 'new' on line 640 takes that reference
 //     console.log(this);
 // }
-// const v = new Video('b'); // 'new' creates a new object => {}
+// const v = new Video('b'); // 'new' in contructor functions, creates a new object and points line 637's 'this' to the new object => {}
+
     /* Example: // A constructor function (conventionally starts with a capital letter)
     function Car(make, model) {
     this.make = make;
@@ -647,4 +648,15 @@ Let vs Var:
     const myCar = new Car('Toyota', 'Corolla'); 
     // The 'new' keyword ensures that 'myCar' is a new object with the specified properties
     console.log(myCar.make); // Output: Toyota */
+
+const video = {
+    title: 'c',
+    tags: ['a', 'b', 'c'],
+    showTags(){
+        this.tags.forEach(function(tag){ // !*Careful! The callback function is a non-method function
+            console.log(this, tag); // !*Careful! Any 'this' placed here would reference the global object
+        })
+    }
+};
+video.showTags(); // But what if I want to list the title next to the tag? 'this' on line 657 won't help so simply.
 
