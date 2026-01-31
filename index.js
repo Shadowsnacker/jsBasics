@@ -618,9 +618,10 @@ Let vs Var:
     let, const => block-scoped
     var    => function-scoped, also adds itself to the window object  */
 
-/* THIS: "This" references the object that is executing the current function
-    method in a function -> obj
-    normal function -> global(window(browswers), global(node)) */
+/* THIS: 
+    "This" references the object that is executing the current function
+    method -> obj
+    non-method function -> global(window(browsers), global(node)) */
 // // const video = {
 // //     title: "a",
 // //     play(){
@@ -645,6 +646,5 @@ Let vs Var:
     // Creating a new object instance using the 'new' keyword
     const myCar = new Car('Toyota', 'Corolla'); 
     // The 'new' keyword ensures that 'myCar' is a new object with the specified properties
-    console.log(myCar.make); // Output: Toyota
-    */
+    console.log(myCar.make); // Output: Toyota */
 
