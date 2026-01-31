@@ -684,4 +684,27 @@ playVideo.apply({name: 'jeremy'}, [1, 2]);
 // const fn = playVideo.bind({ name: 'Jeremy'}); // Bind returns a new object that permanently references it going forward
 // fn();
 playVideo.bind({ name: 'Jeremy'})(); // The above 2 lines can be shortened into this line.
-
+/* FIX #2 for a proper older way */
+// const video = {
+//     title: 'c',
+//     tags: ['a', 'b', 'c'],
+//     showTags(){
+//         this.tags.forEach(function(tag){
+//             console.log(this.title, tag);
+//         }.bind(this)); // Using 'bind' here replaces the global object reference for line 693 to the (new) video object
+//     }
+// };
+// video.showTags();
+/* FIX #3 AND FINAL WAY for a proper UPDATED way when dealing with callback functions, ARROW FUNCTIONS 
+    ARROW functions inherit the 'this' from the containing function,
+    no need to call bind like above, and as such there is no new object! */
+const video = {
+    title: 'c',
+    tags: ['a', 'b', 'c'],
+    showTags(){
+        this.tags.forEach(tag => {
+            console.log(this.title, tag);
+        });
+    }
+};
+video.showTags();
