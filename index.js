@@ -649,14 +649,39 @@ Let vs Var:
     // The 'new' keyword ensures that 'myCar' is a new object with the specified properties
     console.log(myCar.make); // Output: Toyota */
 
-const video = {
-    title: 'c',
-    tags: ['a', 'b', 'c'],
-    showTags(){
-        this.tags.forEach(function(tag){ // !*Careful! The callback function is a non-method function
-            console.log(this, tag); // !*Careful! Any 'this' placed here would reference the global object
-        })
-    }
-};
-video.showTags(); // But what if I want to list the title next to the tag? 'this' on line 657 won't help so simply.
+// const video = {
+//     title: 'c',
+//     tags: ['a', 'b', 'c'],
+//     showTags(){
+//         this.tags.forEach(function(tag){ // !*Careful! The callback function is a non-method function
+//             console.log(this, tag); // !*Careful! Any 'this' placed here would reference the global object
+//         })
+//     }
+// };
+// video.showTags(); 
+// // But what if I want to list the title next to the tag? 'this' on line 657 won't help so simply.
+// // Fix #1 but don't use this method!!!!!!!!!!!!!!**************
+// const video = {
+//     title: 'c',
+//     tags: ['a', 'b', 'c'],
+//     showTags(){
+//         const that = this;
+//         this.tags.forEach(function(tag){
+//             console.log(that.title, tag);
+//         })
+//     }
+// };
+// video.showTags();
+
+/* With "Call, apply, and bind" we can set the 'this' argument for a given function. 
+    The differences between 'apply' and 'call' below is the format when using multiple parameters. */
+function playVideo(a, b) {
+    console.log(this);
+}
+playVideo();
+playVideo.call({name: 'Jeremy'}, 1, 2);
+playVideo.apply({name: 'jeremy'}, [1, 2]);
+// const fn = playVideo.bind({ name: 'Jeremy'}); // Bind returns a new object that permanently references it going forward
+// fn();
+playVideo.bind({ name: 'Jeremy'})(); // The above 2 lines can be shortened into this line.
 
