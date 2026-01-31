@@ -619,15 +619,32 @@ Let vs Var:
     var    => function-scoped, also adds itself to the window object  */
 
 /* THIS: "This" references the object that is executing the current function
-    method -> obj
-    function  -> global(window, global) */
-const video = {
-    title: "a",
-    play(){
-        console.log(this);
+    method in a function -> obj
+    normal function -> global(window(browswers), global(node)) */
+// // const video = {
+// //     title: "a",
+// //     play(){
+// //         console.log(this);
+// //     }
+// // };
+// // video.stop = function() {
+// //     console.log(this);
+// // };
+// // video.stop();
+
+// function Video(title){
+//     this.title = title;
+//     console.log(this);
+// }
+// const v = new Video('b'); // 'new' creates a new object => {}
+    /* Example: // A constructor function (conventionally starts with a capital letter)
+    function Car(make, model) {
+    this.make = make;
+    this.model = model;
     }
-};
-video.stop = function() {
-    console.log(this);
-};
-video.stop();
+    // Creating a new object instance using the 'new' keyword
+    const myCar = new Car('Toyota', 'Corolla'); 
+    // The 'new' keyword ensures that 'myCar' is a new object with the specified properties
+    console.log(myCar.make); // Output: Toyota
+    */
+
