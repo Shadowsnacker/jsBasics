@@ -750,3 +750,5 @@ Let vs Var:
 //         return accumulator + occurence;
 //     }, 0);
 // }
+// ********************* END PART 1 JavaScript FUNDAMENTAL TUTORIAL *********************************
+// ******************* BEGIN PART 2 JavaScript ADVANCED TOPICS   ************************************
