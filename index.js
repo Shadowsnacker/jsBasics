@@ -712,9 +712,41 @@ Let vs Var:
 // Final Exercise #1: create a sum function that adds any number of arguments together whether its an array or not.
 /* spread operator before the parameter name(must be last parameter)
     uses an unknown number of arguments and converts them into an array */
-console.log(sum([1, 2, 3, 4]));
-function sum(...items) { // Now that you have an array, remember the reduce method to get the sum of items in an array
-    if (items.length === 1 && Array.isArray(items[0]))
-        items = [...items[0]]; // Array-ception: Makes a new 'flattened' array from the array that held an array as the argument.
-    return items.reduce((a, b) => a + b);
+// console.log(sum([1, 2, 3, 4]));
+// function sum(...items) { // Now that you have an array, remember the reduce method to get the sum of items in an array
+//     if (items.length === 1 && Array.isArray(items[0]))
+//         items = [...items[0]]; // Array-ception: Makes a new 'flattened' array from the array that held an array as the argument.
+//     return items.reduce((a, b) => a + b);
+// }
+
+// Final Exercise #2: Use the object literal syntax to be able to assign a radius, then read the area back but as a read only, can't rewrite.
+// const circle = {
+//     radius: 1,
+//     get area(){ // 'getter' is needed, area() is the name of the property but is implemented as a method
+//         return Math.PI * this.radius * this.radius; // pi*r^2 ... oh yeah lol
+//     }
+// }
+
+// Final Exercise #3: Counting Occurences + error handling. Throw new Error("") needs a try & catch block
+try {
+    const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
+    const count = countOccurences(null, 1);
+    console.log(count);
+}
+catch (e){
+    console.log(e.message);
+}
+function countOccurences(array, searchElement){
+    // let count = 0;
+    // for (let numb of array)
+    //     if (numb === searchElement)
+    //         count++;
+    // return count; // old way of coding, Reduced method below with arrow function as modern way
+    if (!Array.isArray(array))
+        throw new Error("Invalid Array");
+    return array.reduce((accumulator, current) => {
+        const occurence = (current === searchElement) ? 1 : 0;
+        console.log(accumulator, current, searchElement);
+        return accumulator + occurence;
+    }, 0);
 }
