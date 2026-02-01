@@ -675,15 +675,15 @@ Let vs Var:
 
 /* With "Call, apply, and bind" we can set the 'this' argument for a given function. 
     The differences between 'apply' and 'call' below is the format when using multiple parameters. */
-function playVideo(a, b) {
-    console.log(this);
-}
-playVideo();
-playVideo.call({name: 'Jeremy'}, 1, 2);
-playVideo.apply({name: 'jeremy'}, [1, 2]);
-// const fn = playVideo.bind({ name: 'Jeremy'}); // Bind returns a new object that permanently references it going forward
-// fn();
-playVideo.bind({ name: 'Jeremy'})(); // The above 2 lines can be shortened into this line.
+// function playVideo(a, b) {
+//     console.log(this);
+// }
+// playVideo();
+// playVideo.call({name: 'Jeremy'}, 1, 2);
+// playVideo.apply({name: 'jeremy'}, [1, 2]);
+// // const fn = playVideo.bind({ name: 'Jeremy'}); // Bind returns a new object that permanently references it going forward
+// // fn();
+// playVideo.bind({ name: 'Jeremy'})(); // The above 2 lines can be shortened into this line.
 /* FIX #2 for a proper older way */
 // const video = {
 //     title: 'c',
@@ -698,13 +698,23 @@ playVideo.bind({ name: 'Jeremy'})(); // The above 2 lines can be shortened into 
 /* FIX #3 AND FINAL WAY for a proper UPDATED way when dealing with callback functions, ARROW FUNCTIONS 
     ARROW functions inherit the 'this' from the containing function,
     no need to call bind like above, and as such there is no new object! */
-const video = {
-    title: 'c',
-    tags: ['a', 'b', 'c'],
-    showTags(){
-        this.tags.forEach(tag => {
-            console.log(this.title, tag);
-        });
-    }
-};
-video.showTags();
+// const video = {
+//     title: 'c',
+//     tags: ['a', 'b', 'c'],
+//     showTags(){
+//         this.tags.forEach(tag => {
+//             console.log(this.title, tag);
+//         });
+//     }
+// };
+// video.showTags();
+
+// Final Exercise #1: create a sum function that adds any number of arguments together whether its an array or not.
+/* spread operator before the parameter name(must be last parameter)
+    uses an unknown number of arguments and converts them into an array */
+console.log(sum([1, 2, 3, 4]));
+function sum(...items) { // Now that you have an array, remember the reduce method to get the sum of items in an array
+    if (items.length === 1 && Array.isArray(items[0]))
+        items = [...items[0]]; // Array-ception: Makes a new 'flattened' array from the array that held an array as the argument.
+    return items.reduce((a, b) => a + b);
+}
