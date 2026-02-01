@@ -728,25 +728,25 @@ Let vs Var:
 // }
 
 // Final Exercise #3: Counting Occurences + error handling. Throw new Error("") needs a try & catch block
-try {
-    const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
-    const count = countOccurences(null, 1);
-    console.log(count);
-}
-catch (e){
-    console.log(e.message);
-}
-function countOccurences(array, searchElement){
-    // let count = 0;
-    // for (let numb of array)
-    //     if (numb === searchElement)
-    //         count++;
-    // return count; // old way of coding, Reduced method below with arrow function as modern way
-    if (!Array.isArray(array))
-        throw new Error("Invalid Array");
-    return array.reduce((accumulator, current) => {
-        const occurence = (current === searchElement) ? 1 : 0;
-        console.log(accumulator, current, searchElement);
-        return accumulator + occurence;
-    }, 0);
-}
+// try {
+//     const numbers = [1, 2, 3, 4, 1, 3, 1, 5, 6];
+//     const count = countOccurences(null, 1);
+//     console.log(count);
+// }
+// catch (e){
+//     console.log(e.message);
+// }
+// function countOccurences(array, searchElement){
+//     // let count = 0;
+//     // for (let numb of array)
+//     //     if (numb === searchElement)
+//     //         count++;
+//     // return count; // old way of coding, Reduced method below with arrow function as modern way
+//     if (!Array.isArray(array))
+//         throw new Error("Invalid Array");
+//     return array.reduce((accumulator, current) => {
+//         const occurence = (current === searchElement) ? 1 : 0;
+//         console.log(accumulator, current, searchElement);
+//         return accumulator + occurence;
+//     }, 0);
+// }
