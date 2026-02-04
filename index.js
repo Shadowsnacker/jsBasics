@@ -752,4 +752,4 @@ Let vs Var:
 // }
 // ********************* END PART 1 JavaScript FUNDAMENTAL TUTORIAL *********************************
 // ******************* BEGIN PART 2 JavaScript ADVANCED TOPICS   ************************************
-// Exercise 1: Stopwatch
+// Exercise 1: Stopwatch 
