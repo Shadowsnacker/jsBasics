@@ -781,5 +781,17 @@ circle.draw();
 const circle = createCircle(1);
 circle.draw();
 */
+// Constructor Function
+// Pascal Case & and uses 'this' to set the properties
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function(){
+        console.log('Draw');
+    }
+}
+// 'new' operator below first creates an empty object({}), then 'this' will point to that object
+const another = new Circle(1); 
+
+
 
 // Exercise 1: Stopwatch 
