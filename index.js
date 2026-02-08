@@ -752,4 +752,17 @@ Let vs Var:
 // }
 // ********************* END PART 1 JavaScript FUNDAMENTAL TUTORIAL *********************************
 // ******************* BEGIN PART 2 JavaScript ADVANCED TOPICS   ************************************
+// const circle = {}; an object literal
+/* const circle = {
+    radius: 1,         // property
+    location: {        // property
+        x: 1,
+        y: 1,
+    },
+    draw: function() {  // Method
+        console.log('draw');
+    }
+}; 
+*/
+
 // Exercise 1: Stopwatch 
