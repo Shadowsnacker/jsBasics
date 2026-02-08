@@ -763,34 +763,42 @@ Let vs Var:
         console.log('draw');
     }
 }; 
-circle.draw(); 
-*/
+circle.draw(); */
 /* If an object has one or more methods, object is said to have behavior
     Creating objects with the object literal syntax is only an issue if the object has 'behavior'
-    Solution? Factory or Constructor functions.
-*/
-// Factory Function
-/* function createCircle(radius) {
-    return {
-        radius, // would normally be: 'radius: radius,' but if key and value are same then just once is fine
-        draw: function () {
-            console.log('draw');
-        }
-    };
-}
-const circle = createCircle(1);
-circle.draw();
-*/
-// Constructor Function
-// Pascal Case & and uses 'this' to set the properties
-function Circle(radius) {
-    this.radius = radius;
-    this.draw = function(){
-        console.log('Draw');
-    }
-}
-// 'new' operator below first creates an empty object({}), then 'this' will point to that object
-const another = new Circle(1); 
+    Solution? Factory or Constructor functions. */
+
+// // FACTORY FUNCTION
+// function createCircle(radius) {
+//     return {
+//         radius, // would normally be: 'radius: radius,' but if key and value are same then just once is fine
+//         draw: function () {
+//             console.log('draw');
+//         }
+//     };
+// }
+// const circle = createCircle(1);
+// // circle.draw();
+// // CONSTRUCTOR FUNCTION
+// // Pascal Case & and uses 'this' to set the properties
+// // BEWARE: WITHOUT 'new' ON LINE 794 'this' references *See LINE 621-624*
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log('Draw');
+//     }
+// }
+// /* 'new' operator below first creates an empty object({}),
+//     then 'this' will point to that object,
+//     finally it will return that object from line 787 function(notice there is no return statement therein)  */
+// const another = new Circle(1); 
+
+// /* THERE IS ALSO A CONSTRUCTOR PROPERTY for every object.(Use in the browswer console[another.constructor])
+//     it references the function that was used to create that object
+//     Example alternative constructor properties, but the literals are simpler
+//         new String(); // '', "", ``
+//         new Boolean(); // true, false
+//         new Number(); // 1, 2, 3, 4, ... */
 
 
 
