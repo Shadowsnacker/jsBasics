@@ -763,8 +763,23 @@ Let vs Var:
         console.log('draw');
     }
 }; 
-circle.draw(); */
-// If an object has one or more methods, object is said to have behavior
-
+circle.draw(); 
+*/
+/* If an object has one or more methods, object is said to have behavior
+    Creating objects with the object literal syntax is only an issue if the object has 'behavior'
+    Solution? Factory or Constructor functions.
+*/
+// Factory Function
+/* function createCircle(radius) {
+    return {
+        radius, // would normally be: 'radius: radius,' but if key and value are same then just once is fine
+        draw: function () {
+            console.log('draw');
+        }
+    };
+}
+const circle = createCircle(1);
+circle.draw();
+*/
 
 // Exercise 1: Stopwatch 
