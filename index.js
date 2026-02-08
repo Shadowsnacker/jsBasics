@@ -763,6 +763,8 @@ Let vs Var:
         console.log('draw');
     }
 }; 
-*/
+circle.draw(); */
+// If an object has one or more methods, object is said to have behavior
+
 
 // Exercise 1: Stopwatch 
