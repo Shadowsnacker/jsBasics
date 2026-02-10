@@ -801,5 +801,4 @@ circle.draw(); */
 //         new Number(); // 1, 2, 3, 4, ... */
 
 
-
 // Exercise 1: Stopwatch 
