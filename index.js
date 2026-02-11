@@ -799,6 +799,6 @@ circle.draw(); */
 //         new String(); // '', "", ``
 //         new Boolean(); // true, false
 //         new Number(); // 1, 2, 3, 4, ... */
-
+// MISSING LESSON EXAMPLES: (Part 2: Objects: Functions are objects)
 
 // Exercise 1: Stopwatch 
