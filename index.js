@@ -801,4 +801,19 @@ circle.draw(); */
 //         new Number(); // 1, 2, 3, 4, ... */
 // MISSING LESSON EXAMPLES: (Part 2: Objects: Functions are objects)
 
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function(){
+        console.log('draw');
+    }
+}
+const Circle1 = new Function('radius', `
+    this.radiur = radius;
+    this.draw = function(){
+    console.log('draw');
+    }
+    `);
+const circle = new Circle1(1);
+const another = new Circle(1);
+
 // Exercise 1: Stopwatch 
