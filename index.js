@@ -804,21 +804,21 @@ circle.draw(); */
 // Every object has a constructor PROPERTY, that references the function that was used to create that object
 /* First use of DOM. E.G.: in the browswer dev tools console, write: Circle.name(method), Circle.length(method return the # of arguments) 
                                         Circle.constructor(shows the constructed function made by JavaScript, See (const Circle1) below) */
-function Circle(radius) { 
-    this.radius = radius;
-    this.draw = function(){
-        console.log('draw');
-    }
-}
-const another = new Circle(1);
-// this constructor function represents what happens internally when you make the above constructor function
-const Circle1 = new Function('radius', ` 
-    this.radiur = radius;
-    this.draw = function(){
-    console.log('draw');
-    }
-    `);
-const circle = new Circle1(1);
+// function Circle(radius) { 
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log('draw');
+//     }
+// }
+// const another = new Circle(1);
+// // this constructor function represents what happens internally when you make the above constructor function
+// const Circle1 = new Function('radius', ` 
+//     this.radiur = radius;
+//     this.draw = function(){
+//     console.log('draw');
+//     }
+//     `);
+// const circle = new Circle1(1);
 
 
 
