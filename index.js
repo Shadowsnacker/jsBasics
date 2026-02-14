@@ -820,6 +820,7 @@ circle.draw(); */
 //     `);
 // const circle = new Circle1(1);
 
+// Primitive(or Value) types are copied by their value; objects are copied by their reference
 
 
 // Exercise 1: Stopwatch 
