@@ -19,7 +19,10 @@
 //     if (j % 2 !== 0) console.log('Olympus.. would be that weh', j); 
 //     j++;
 // } while (j <= 5);
+
 // **************************************************************************************
+// /* SUMMARY: For-in loop: Iterates over the properties of an object.
+//             For-of loop: Iterates over the elements/items of an array */
 // // Begin a for-in loop. Can list items in objects.
 // const person = {
 //     name: 'Jeremy',
@@ -35,9 +38,8 @@
 // // const colors = ['red', 'green', 'blue'];
 // // for (let index in colors) console.log(index, colors[index]);
 // // for (let color of colors) console.log(color);
-// /* SUMMARY: For-in loop: Iterates over the properties of an object.
-//             For-of loop: Iterates over the elements/items of an array */
 // // *****************************************************************************************
+
 // // Exercise #1
 // let number = max(3, 4);
 // console.log(number);
@@ -822,18 +824,33 @@ circle.draw(); */
 
 // Primitive(or Value) types are copied by their value; objects are copied by their reference
 
-// Adding or removing properites
-function circle(radius){
+// // Adding or removing properites
+// function Circle(radius){
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log('draw');
+//     }
+// }
+// const circle = new Circle(10);
+// circle.location = { x: 1 };
+// /* const propertyName = 'location'; // This combo is useful when property names are either unknown or are not valid identifiers
+// circle[propertyName] = [ x: 1 ]; */ // (IE: center-location[special characters or a space are is not valid in property names])
+// delete circle['location']; // or can use the easier to read dot-notation 'delete circle.location;' just keep in mind the above mentioned rule
+
+function Circle(radius){
     this.radius = radius;
     this.draw = function(){
         console.log('draw');
     }
 }
 const circle = new Circle(10);
-circle.location = [ x: 1 ];
-/* const propertyName = 'location'; // This combo is useful when property names are either unknown or are not valid identifiers
-circle[propertyName] = [ x: 1 ]; */
-// (IE: center-location[special dash symbol not valid in property names ])
-
+for (let key in circle){
+    if (typeof circle[key] !== 'function') // This line can seperate propeties from methods
+    console.log(key, circle[key]);
+}
+const keys = Object.keys(circle); // These two lines CANNOT seperate properties form methods
+console.log(keys);
+if ('radius' in circle)
+    console.log('Circle has a radius');
 
 // Exercise 1: Stopwatch 
