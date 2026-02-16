@@ -822,5 +822,18 @@ circle.draw(); */
 
 // Primitive(or Value) types are copied by their value; objects are copied by their reference
 
+// Adding or removing properites
+function circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log('draw');
+    }
+}
+const circle = new Circle(10);
+circle.location = [ x: 1 ];
+/* const propertyName = 'location'; // This combo is useful when property names are either unknown or are not valid identifiers
+circle[propertyName] = [ x: 1 ]; */
+// (IE: center-location[special dash symbol not valid in property names ])
+
 
 // Exercise 1: Stopwatch 
