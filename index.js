@@ -837,24 +837,24 @@ circle.draw(); */
 // circle[propertyName] = [ x: 1 ]; */ // (IE: center-location[special characters or a space are is not valid in property names])
 // delete circle['location']; // or can use the easier to read dot-notation 'delete circle.location;' just keep in mind the above mentioned rule
 
-// // Enumerating properties 
-// function Circle(radius){
-//     this.radius = radius;
-//     this.draw = function(){
-//         console.log('draw');
-//     }
-// }
-// const circle = new Circle(10);
-// // for-in loops enumerate members of an object, Object.keys gets the keys in an object,
-// //  and the 'in' operator on line 855 can be used to check for the existance a property or method in an object.
-// for (let key in circle){
-//     if (typeof circle[key] !== 'function') // This line can seperate propeties from methods
-//     console.log(key, circle[key]);
-// }
-// const keys = Object.keys(circle); // These two lines CANNOT seperate properties form methods
-// console.log(keys);
-// if ('radius' in circle)
-//     console.log('Circle has a radius');
+// Enumerating properties 
+function Circle(radius){
+    this.radius = radius;
+    this.draw = function(){
+        console.log('draw');
+    }
+}
+const circle = new Circle(10);
+/* for-in loops enumerate members of an object, Object.keys gets the keys in an object,
+     and the 'in' operator on line 856 can be used to check for the existance a property or method in an object.*/
+for (let key in circle){
+    if (typeof circle[key] !== 'function') // This line can seperate propeties from methods
+    console.log(key, circle[key]);
+}
+const keys = Object.keys(circle); // These two lines CANNOT seperate properties from methods
+console.log(keys);
+if ('radius' in circle)
+    console.log('Circle has a radius');
 
 
 
