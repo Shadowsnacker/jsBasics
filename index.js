@@ -856,24 +856,52 @@ circle.draw(); */
 // if ('radius' in circle)
 //     console.log('Circle has a radius');
 
-// Private properties and methods *See: Scope vs Closures
+// // Private properties and methods *See: Scope vs Closures
+// function Circle(radius){
+//     this.radius = radius;
+//     // this.defaultLocation = { x: 0, y: 0};
+//     let defaultLocation = { x: 0, y: 0}; // This change from the above line makes it a private property or local variable only
+//     let computeOptimumLocation = function(factor){
+//         // ...
+//     }
+//     this.draw = function(){
+//         /* let x, y; *Example of scope, scopes being temporary while closures, like the above private variables, 
+//         continue in memory preserving their state because they are a part of the closure of the draw function */
+//         computeOptimumLocation(0.1); // Inside this method's scope, this is how to access the private members before this.draw
+//         // defaultLocation... Same as line 870
+//         // But if you want to access members of the "new Circle Object", then you must you 'this'(below);
+//         // this.radius...
+//         console.log('draw');
+//     };
+// }
+// const circle = new Circle(10);
+// circle.draw();
+
+/* Getting vs Setters Part 2. What if we want to READ'ONLY, or display somewhere, in our app
+    the defaultLocation private member from the outside */
 function Circle(radius){
     this.radius = radius;
-    // this.defaultLocation = { x: 0, y: 0};
-    let defaultLocation = { x: 0, y: 0}; // This change from the above line makes it a private property or local variable only
-    let computeOptimumLocation = function(factor){
-        // ...
+    let defaultLocation = { x: 0, y: 0};
+    this.getDefaultLocation = function() { /* Dealing with this inner function, the closure of this function includes 
+            line 887 as well as all the variables defined in the parent function, like line 884. */
+        return defaultLocation;
     }
     this.draw = function(){
-        /* let x, y; *Example of scope, scopes being temporary while closures, like the above private variables, 
-        continue in memory preserving their state because they are a part of the closure of the draw function */
-        computeOptimumLocation(0.1); // Inside this method's scope, this is how to access the private members before this.draw
-        // defaultLocation... Same as line 870
-        // But if you want to access members of the "new Circle Object", then you must you 'this'(below);
-        // this.radius...
         console.log('draw');
     };
+    /* line 896 is JavaScript specific call, there is also Object.defineProperties if you want to define multiple
+            First argument in that method is the object you want to add a new property to(the new circle object referenced by 'this')
+            Second argument is the name of the property.
+            Third argument is an object, in that object add a key/value pair 'get' with the value of a function */
+    Object.defineProperty(this, 'defaultLocation', {
+        get: function(){
+            return defaultLocation; // This variable is part of the closure of the inner function to be able to access it.
+        } // in the dev tools console in live server. type circle to see the object's new property(defaultLocation) to be shown.
+    });
 }
 const circle = new Circle(10);
+circle.draw();
+
+
 
 // Exercise 1: Stopwatch 
