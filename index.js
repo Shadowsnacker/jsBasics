@@ -569,8 +569,8 @@ Begin functions detailed Dive ********************************* */
 // console.log(interest(10000)); // Example: console.log(interest(10000, undefined, 5));
 
 // // Getters and Setters:
-// // Getters => Access properties
-// // Setters => Change(Mutate) properties
+// /* Getters => Access properties 
+//     Setters => Change(Mutate) properties */
 // const person = {
 //     firstName: 'Jeremy',
 //     lastName: 'Boyd',
@@ -578,7 +578,7 @@ Begin functions detailed Dive ********************************* */
 //     get fullName() {
 //         return `${person.firstName} ${person.lastName}`;
 //     },
-//     set fullName(value){  // Keep in mind this only works for strings currently, split works with strings only, etc.
+//     set fullName(value){  // Keep in mind this only works for strings currently. Below, split works with strings only, etc.
 //         const parts = value.split(' ');
 //         this.firstName = parts[0];
 //         this.lastName = parts[1];
@@ -856,11 +856,16 @@ circle.draw(); */
 // if ('radius' in circle)
 //     console.log('Circle has a radius');
 
+// Private properties and methods *See: Scope vs Closures; and Getters and setters
 function Circle(radius){
     this.radius = radius;
+    // this.defaultLocation = { x: 0, y: 0};
+    let defaultLocation = { x: 0, y: 0}; // This change from the above line makes it a private property or local variable only
     this.draw = function(){
+        /* let x, y; *Example of scope, scopes being temporary while closures, like the above private variables, 
+        continue in memory preserving their state because they are a part of the closure of the draw function */
         console.log('draw');
-    }
+    };
 }
 const circle = new Circle(10);
 
