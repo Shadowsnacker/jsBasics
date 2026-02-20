@@ -877,30 +877,30 @@ circle.draw(); */
 // const circle = new Circle(10);
 // circle.draw();
 
-/* Getting vs Setters Part 2. What if we want to READ'ONLY, or display somewhere, in our app
-    the defaultLocation private member from the outside */
-function Circle(radius){
-    this.radius = radius;
-    let defaultLocation = { x: 0, y: 0};
-    this.getDefaultLocation = function() { /* Dealing with this inner function, the closure of this function includes 
-            line 887 as well as all the variables defined in the parent function, like line 884. */
-        return defaultLocation;
-    }
-    this.draw = function(){
-        console.log('draw');
-    };
-    /* line 896 is JavaScript specific call, there is also Object.defineProperties if you want to define multiple
-            First argument in that method is the object you want to add a new property to(the new circle object referenced by 'this')
-            Second argument is the name of the property.
-            Third argument is an object, in that object add a key/value pair 'get' with the value of a function */
-    Object.defineProperty(this, 'defaultLocation', {
-        get: function(){
-            return defaultLocation; // This variable is part of the closure of the inner function to be able to access it.
-        } // in the dev tools console in live server. type circle to see the object's new property(defaultLocation) to be shown.
-    });
-}
-const circle = new Circle(10);
-circle.draw();
+// /* Getting vs Setters Part 2. What if we want to READ'ONLY, or display somewhere, in our app
+//     the defaultLocation private member from the outside */
+// function Circle(radius){
+//     this.radius = radius;
+//     let defaultLocation = { x: 0, y: 0};
+//     this.getDefaultLocation = function() { /* Dealing with this inner function, the closure of this function includes 
+//             line 887 as well as all the variables defined in the parent function, like line 884. */
+//         return defaultLocation;
+//     }
+//     this.draw = function(){
+//         console.log('draw');
+//     };
+//     /* line 896 is JavaScript specific call, there is also Object.defineProperties if you want to define multiple
+//             First argument in that method is the object you want to add a new property to(the new circle object referenced by 'this')
+//             Second argument is the name of the property.
+//             Third argument is an object, in that object add a key/value pair 'get' with the value of a function */
+//     Object.defineProperty(this, 'defaultLocation', {
+//         get: function(){
+//             return defaultLocation; // This variable is part of the closure of the inner function to be able to access it.
+//         } // in the dev tools console in live server. type circle to see the object's new property(defaultLocation) to be shown.
+//     });
+// }
+// const circle = new Circle(10);
+// circle.draw();
 
 
 
