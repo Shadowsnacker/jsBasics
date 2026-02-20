@@ -896,12 +896,42 @@ circle.draw(); */
 //     Object.defineProperty(this, 'defaultLocation', {
 //         get: function(){
 //             return defaultLocation; // This variable is part of the closure of the inner function to be able to access it.
-//         } // in the dev tools console in live server. type circle to see the object's new property(defaultLocation) to be shown.
+//         }, // in the dev tools console in live server. type circle to see the object's new property(defaultLocation) to be shown.
+//         set: function(value){ // if you want to set the property from the outside because 'get' is a READ ONLY above, 'set' this line.
+//             if (!value.x || !value.y)
+//                 throw new Error('Invalid Location');
+//             defaultLocation = value;
+//         }
 //     });
 // }
 // const circle = new Circle(10);
+// circle.defaultLocation = 1; // This line is the effort of the 'set' to change the property but 'throw new Error' is a catch we made
 // circle.draw();
 
-
-
-// Exercise 1: Stopwatch 
+// // Exercise 1: Stopwatch
+// function Stopwatch(){
+//     let startTime, endTime, running, duration = 0;
+//     this.start = function(){
+//         if (running)
+//             throw new Error('Stopwatch has already started');
+//         running = true;
+//         startTime = new Date();
+//     };
+//     this.stop = function(){
+//         if (!running)
+//             throw new Error('Stopwatch has not started yet');
+//         running = false;
+//         endTime = new Date();
+//         const seconds = (endTime.getTime()- startTime.getTime()) / 1000;
+//         duration += seconds;
+//     };
+//     this.reset = function(){
+//         startTime = null;
+//         endTime = null;
+//         running = false;
+//         duration = 0;
+//     };
+//     Object.defineProperty(this, 'duration', {
+//         get: function(){ return duration; }
+//     });
+// }
