@@ -46,7 +46,7 @@
 // function max (a, b){
 //     /* if (a < b) return a;
 //     return b; */
-//     // Alternatively instead of lines 43 & 44, use the Ternary/Conditional Operator
+//     // Alternatively use the Ternary/Conditional Operator
 //     return (a > b) ? a : b;
 // }
 // // Exercise #2
@@ -89,7 +89,7 @@
 // function checkSpeed(speed) {
 //     const speedLimit = 70;
 //     const kmPerPoint = 5;
-//     if (speed < speedLimit + kmPerPoint){ // Changed the magic numer(70) to a dynamic reference point
+//     if (speed < speedLimit + kmPerPoint){
 //         console.log('ok');
 //         return; // Added a return here so that I can delete the "else" code block format below to tighten things up further
 //     }
@@ -106,7 +106,7 @@
 // //     for (let i = 0; i <= limit; i++){
 // //         // if (i % 2 === 0) console.log(i, "Even");
 // //         // else console.log(i, "Odd");               
-// //         // We could do lines 103 & 104 but a ternary operator below is cleaner
+// //         // We could above but a ternary operator below is cleaner
 // //         const message = (i % 2 === 0) ? 'Even' : 'Odd';
 // //         console.log(i, message);
 // //     }
@@ -941,23 +941,65 @@ circle.draw(); */
 // Property descriptors lesson: reveal hidden actions within the prototypes that allow or disallow reading/editing/etc.
 
 
-// Prototype vs Instance members
-function Circle(radius){
-    // Instance Memebers
-    this.radius = radius;
-    this.move = function(){
-        this.draw(); // this line is utilizing prototype dependency so its ok to use here
-        console.log('Move');
-    }
-}
-// Next line is now a prototype member
-Circle.prototype.draw = function() {
-    /* this.move(); comment this line out if the above proto dependency is active */
-    console.log('Draw');
-}
-const c1 = new Circle(1);
-const c2 = new Circle(1);
-Circle.prototype.toString = function(){
-    return 'Circle with radius ' + this.radius;
-    // Type in live server dev console: c1.toString()
-}
+// // Prototype vs Instance members
+// function Circle(radius){
+//     // Instance Memebers
+//     this.radius = radius;
+//     this.move = function(){
+//         this.draw(); // this line is utilizing prototype dependency so its ok to use here
+//         console.log('Move');
+//     }
+// }
+// // Next line is now a prototype member
+// Circle.prototype.draw = function() {
+//     /* this.move(); comment this line out if the above proto dependency is active */
+//     console.log('Draw');
+// }
+// const c1 = new Circle(1);
+// const c2 = new Circle(1);
+// Circle.prototype.toString = function(){
+//     return 'Circle with radius ' + this.radius;
+//     // Type in live server dev console: c1.toString()
+// }
+
+// !!!**********************************************************
+/* Exercise 2: Stopwatch # Don't do this at all. Previous Stopwatch is perfect, this one showcases premature optimization that creates more 
+        problems. This one allows the stopwatch 'duration' value to be changed from the outside which is bad. */
+// function Stopwatch(){
+//     let startTime, endTime, running, duration = 0;
+
+//     Object.defineProperty(this, 'duration', {
+//         get: function(){return duration;},
+//         set: function(value) {duration = value}
+//     });
+//     Object.defineProperty(this, 'startTime', {
+//         get: function(){return startTime;}
+//     });
+//     Object.defineProperty(this, 'endTime', {
+//         get: function(){return endTime;}
+//     });
+//     Object.defineProperty(this, 'running', {
+//         get: function(){return running;}
+//     });
+// }
+// Stopwatch.prototype.start = function(){
+//     if (this.running)
+//         throw new Error('Stopwatch has already started');
+//     this.running = true;
+//     this.startTime = new Date();
+// };
+// Stopwatch.prototype.stop = function(){
+//     if (!this.running)
+//         throw new Error('Stopwatch has not started yet');
+//     this.running = false;
+//     this.endTime = new Date();
+//     const seconds = (endTime.getTime()- startTime.getTime()) / 1000;
+//     this.duration += seconds;
+// };
+// Stopwatch.prototype.reset = function(){
+//     this.startTime = null;
+//     this.endTime = null;
+//     this.running = false;
+//     duration = 0;
+// };    !!!!!********************************************************
+
