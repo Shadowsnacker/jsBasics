@@ -905,7 +905,7 @@ circle.draw(); */
 //     });
 // }
 // const circle = new Circle(10);
-// circle.defaultLocation = 1; // This line is the effort of the 'set' to change the property but 'throw new Error' is a catch we made
+// circle.defaultLocation = 1; // This line is the effort of the 'set' to change the property but 'throw new Error'
 // circle.draw();
 
 // // Exercise 1: Stopwatch
