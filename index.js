@@ -908,6 +908,7 @@ circle.draw(); */
 // circle.defaultLocation = 1; // This line is the effort of the 'set' to change the property but 'throw new Error'
 // circle.draw();
 
+// **********************************************************
 // // Exercise 1: Stopwatch
 // function Stopwatch(){
 //     let startTime, endTime, running, duration = 0;
@@ -935,3 +936,23 @@ circle.draw(); */
 //         get: function(){ return duration; }
 //     });
 // }
+// ********************************************************
+
+// Property descriptors lesson: reveal hidden actions within the prototypes that allow or disallow reading/editing/etc.
+
+
+// Prototype vs Instance members
+function Circle(radius){
+    // Instance Memebers
+    this.radius = radius;
+}
+// Next line is now a prototype member
+Circle.prototype.draw = function() {
+    console.log('Draw');
+}
+const c1 = new Circle(1);
+const c2 = new Circle(1);
+Circle.prototype.toString = function(){
+    return 'Circle with radius ' + this.radius;
+    // Type in live server dev console: c1.toString()
+}
