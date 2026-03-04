@@ -945,9 +945,14 @@ circle.draw(); */
 function Circle(radius){
     // Instance Memebers
     this.radius = radius;
+    this.move = function(){
+        this.draw(); // this line is utilizing prototype dependency so its ok to use here
+        console.log('Move');
+    }
 }
 // Next line is now a prototype member
 Circle.prototype.draw = function() {
+    /* this.move(); comment this line out if the above proto dependency is active */
     console.log('Draw');
 }
 const c1 = new Circle(1);
