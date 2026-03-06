@@ -314,11 +314,10 @@ Begin Arrays****************************************   */
 // const numbs = [1, 2, 3];
 // for (let numb of numbs)
 //     console.log(numb);
-
 // // numbs.forEach(function(number){
 // //     console.log(number);
 // // });
-// // or on line 322 one can use the arrow function.
+// // or we can use the arrow function.
 // numbs.forEach((number, index) => console.log(index, number));
 
 // // Joining Arrays
@@ -1003,3 +1002,19 @@ circle.draw(); */
 //     duration = 0;
 // };    !!!!!********************************************************
 
+// // Creating my own prototypical inheritance
+function Shape(){
+}
+Shape.prototype.duplicate = function() {
+    console.log('duplicate');
+}
+function Circle(radius) {
+    this.radius = radius;
+}
+// Circle.prototype = Object.create(Object.prototype); Next line changes the proto from this line 
+Circle.prototype = Object.create(Shape.prototype);
+Circle.prototype.draw = function(){
+    console.log('draw');
+}
+const s = new Shape();
+const c = new Circle(1);
