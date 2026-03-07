@@ -264,8 +264,7 @@
 //     {label: '$$', Tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20},
 //     {label: '$$$', Tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 50},
 // ];
-/* End of Object Section ********************************
-Begin Arrays****************************************   */
+// End of Object Section ********************************Begin Arrays**************************************** 
 // const numbers = [3, 4];
 // numbers.push(5, 6);
 // numbers.unshift(1, 2);
@@ -384,7 +383,7 @@ Begin Arrays****************************************   */
 //     .map(obj => obj.value);
 // console.log(items);
 
-// // // Reducing an Array. Line 389-391 old way to code? 392 new way.
+// // // Reducing an Array.
 // const numbers = [1, 2, -1, 3];
 // // let sum = 0;
 // // for(let n of numbers)
@@ -510,9 +509,7 @@ Begin Arrays****************************************   */
 //     .reverse() // Here we desc
 //     .map(m => m.title) // maps a new array with the filtered and ordered titles
 // console.log(titles);
-/** End of Arrays**********************************************
-
-Begin functions detailed Dive ********************************* */
+// End of Arrays**********************************************Begin functions Dive *********************************
 /*  Function Declaration [(THE FUNCTION CAN BE CALLED BEFORE THE DECLARATION IS DEFINED)] 
     Possible via "Hoisting": INTERVIEW QUESTION. 
     The process of moving function declarations to the top of the file automatically.
@@ -752,6 +749,14 @@ Let vs Var:
 //     }, 0);
 // }
 // ********************* END PART 1 JavaScript FUNDAMENTAL TUTORIAL *********************************
+// // Testing my own knowledge of building a constructor. 8/10
+// function Cat(action, say, want){
+//     this.action = action;
+//     this.say = say;
+//     this.want = want;
+// }
+// const myCat = new Cat("Stretch", "Meow", "Food");
+// console.log(myCat.say);
 // ******************* BEGIN PART 2 JavaScript ADVANCED TOPICS   ************************************
 // const circle = {}; an object literal
 /* const circle = {
@@ -1002,19 +1007,45 @@ circle.draw(); */
 //     duration = 0;
 // };    !!!!!********************************************************
 
+
+// Lesson recap: Carefull when resetting prototypes, must also reset the constructor!
+
+
 // // Creating my own prototypical inheritance
-function Shape(){
-}
-Shape.prototype.duplicate = function() {
-    console.log('duplicate');
-}
-function Circle(radius) {
-    this.radius = radius;
-}
-// Circle.prototype = Object.create(Object.prototype); Next line changes the proto from this line 
-Circle.prototype = Object.create(Shape.prototype);
-Circle.prototype.draw = function(){
-    console.log('draw');
-}
-const s = new Shape();
-const c = new Circle(1);
+// // In live server, call "c" in dev tools in window browswer to check protoypical placements
+// function Shape(){
+// }
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+// function Circle(radius) {
+//     this.radius = radius;
+// }
+// // Circle.prototype = Object.create(Object.prototype); Next line changes the proto from this line 
+// Circle.prototype = Object.create(Shape.prototype);
+// // Circle.prototype.constructor() === new Circle(); // These are the same thing on either side of the '==='
+// Circle.prototype.constructor = Circle;
+// Circle.prototype.draw = function(){
+//     console.log('draw');
+// }
+// const s = new Shape();
+// const c = new Circle(1);
+
+// // Calling the Super Constructor
+// function Shape(color){
+//     this.color = color;
+// }
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+// function Circle(radius) {
+//     this.radius = radius;
+// }
+// Circle.prototype = Object.create(Shape.prototype);
+// Circle.prototype.constructor = Circle;
+// Circle.prototype.draw = function(){
+//     console.log('draw');
+// }
+// const s = new Shape();
+// const c = new Circle(1);
+
