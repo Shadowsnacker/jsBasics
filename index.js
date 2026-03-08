@@ -1191,7 +1191,6 @@ circle.draw(); */
 // HtmlElemnt.prototype.focus = function(){
 //     console.log('focused');
 // }
-
 // function HtmlSelectElement(items = []) {
 //     this.items = items;
 //     this.addItem = function(item) {
@@ -1210,13 +1209,13 @@ circle.draw(); */
 //         }; */
 //     }
 // }
-// HtmlSelectElement.prototype = new HtmlElemnt(); 
-// HtmlSelectElement.prototype.constructor = HtmlSelectElement;
 // function HtmlImageElement(src){
 //     this.src = src;
 //     this.render = function(){
 //         return `img src="${this.src}" />`;
 //     }
 // }
+// HtmlSelectElement.prototype = new HtmlElemnt(); 
+// HtmlSelectElement.prototype.constructor = HtmlSelectElement;
 // ***************************************************************************************
 
