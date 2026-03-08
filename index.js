@@ -1051,30 +1051,110 @@ circle.draw(); */
 // const s = new Shape();
 // const c = new Circle(1, 'red');
 
-// Intermediate function inheritance(the extend function below)
-function Shape(color){
-    this.color = color;
-}
-Shape.prototype.duplicate = function() {
-    console.log('duplicate');
-}
-function extend(Child, Parent) {
-    Child.prototype = Object.create(Parent.prototype);
-    Child.prototype.constructor = Child;  
-}
-function Circle(radius, color) {
-    Shape.call(this, color);
-    this.radius = radius;
-}
-extend(Circle, Shape);
-Circle.prototype.draw = function(){
-    console.log('draw');
-}
-function Square(size){
-    this.size = size;
-}
-extend(Square, Shape);
+// // Intermediate function inheritance(the extend function below)
+// function Shape(color){
+//     this.color = color;
+// }
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+// function extend(Child, Parent) {
+//     Child.prototype = Object.create(Parent.prototype);
+//     Child.prototype.constructor = Child;  
+// }
+// function Circle(radius, color) {
+//     Shape.call(this, color);
+//     this.radius = radius;
+// }
+// extend(Circle, Shape);
+// Circle.prototype.draw = function(){
+//     console.log('draw');
+// }
+// function Square(size){
+//     this.size = size;
+// }
+// extend(Square, Shape);
+// const s = new Shape();
+// const c = new Circle(1, 'red');
 
-const s = new Shape();
-const c = new Circle(1, 'red');
+// // Method overriding: c.duplicate() in live server dev tools console
+// function extend(Child, Parent) {
+//     Child.prototype = Object.create(Parent.prototype);
+//     Child.prototype.constructor = Child;
+// }
+// function Shape() {
+// }
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+// function Circle(){
+// }
+// extend(Circle, Shape); // next line HAS to be after this line otherwise would disappear since we are resetting the prototype as currently written
+// Circle.prototype.duplicate = function() {
+//     Shape.prototype.duplicate.call(this); // this line is to show the parent element as well as the child element that would normally only be called
+//     console.log('duplicate circle');
+// }
+// const c = new Circle();
+
+// // Polymorphism: Making 'duplicate' versatile shown in dev tools in live server
+// function extend(Child, Parent) {
+//     Child.prototype = Object.create(Parent.prototype);
+//     Child.prototype.constructor = Child;
+// }
+// function Shape() {
+// }
+// Shape.prototype.duplicate = function() {
+//     console.log('duplicate');
+// }
+// function Circle(){
+// }
+// extend(Circle, Shape);
+// Circle.prototype.duplicate = function() {
+//     console.log('duplicate circle');
+// }
+// function Square(){
+// }
+// extend(Square, Shape);
+// Square.prototype.duplicate = function() {
+//     console.log('duplicate square');
+// }
+// const shapes = [
+//     new Circle(),
+//     new Square()
+// ];
+// for (let shape of shapes)
+//     shape.duplicate();
+
+// // Mixins
+// function mixin(target, ...sources) {
+//     Object.assign(target, ...sources);
+// }
+// const canEat = {
+//     eat: function(){
+//         this.hunger--;
+//         console.log('eating');
+//     }
+// };
+// const canWalk = {
+//     walk: function(){
+//         console.log('walking');
+//     }
+// };
+// const canSwim = {
+//     swim: function(){
+//         console.log('swim');
+//     }
+// };
+// function Person() {
+// }
+// // Object.assign(Person.prototype, canEat, canWalk); // this line is used before the mixin function and call was added
+// mixin(Person.prototype, canEat, canWalk);
+// const person = new Person();
+// console.log(person);
+// function Goldfish() {
+// }
+// // Object.assign(Goldfish.prototype, canEat, canSwim);
+// mixin(Person.prototype, canEat, canSwim);
+// const goldfish = new Goldfish();
+// console.log(goldfish);
 
