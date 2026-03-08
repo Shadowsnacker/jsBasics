@@ -1158,7 +1158,7 @@ circle.draw(); */
 // const goldfish = new Goldfish();
 // console.log(goldfish);
 
-// // ************ Exercise: Prototypical Inheritance *******************
+// // ************ Exercise: Prototypical Inheritance **************************************8
 // function HtmlElemnt(){
 //     this.click = function() {
 //         console.log('clicked');
@@ -1182,4 +1182,41 @@ circle.draw(); */
 // HtmlSelectElement.prototype = new HtmlElemnt(); 
 // HtmlSelectElement.prototype.constructor = HtmlSelectElement;
 
-// *********** Exercise: Polymorphism ***************
+// // *********** Exercise: Polymorphism ************************************
+// function HtmlElemnt(){
+//     this.click = function() {
+//         console.log('clicked');
+//     };
+// }
+// HtmlElemnt.prototype.focus = function(){
+//     console.log('focused');
+// }
+
+// function HtmlSelectElement(items = []) {
+//     this.items = items;
+//     this.addItem = function(item) {
+//         this.items.push(item);
+//     }
+//     this.removeItem = function(item) {
+//         this.items.splice(this.items.indexOf(item), 1);
+//     }
+//     this.render = function() { // when 'map' creates the array and combines the items, 'join' separates them with a space as a string instead of with commas
+//         return `
+//         <select>${this.items.map(item => `<option>${item}</option>`).join('')} 
+//         </select>`;
+//         /* Review on arrow functions:                  
+//         const renderItem = function (item) {  // Get rid of 'function' keyword, cut paranthesis if single argument, separate body of function with '=>'
+//             return `<option>${item}</option>`; // if single return statement, cut 'return' keyword and curly braces
+//         }; */
+//     }
+// }
+// HtmlSelectElement.prototype = new HtmlElemnt(); 
+// HtmlSelectElement.prototype.constructor = HtmlSelectElement;
+// function HtmlImageElement(src){
+//     this.src = src;
+//     this.render = function(){
+//         return `img src="${this.src}" />`;
+//     }
+// }
+// ***************************************************************************************
+
