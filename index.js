@@ -1051,7 +1051,7 @@ circle.draw(); */
 // const c = new Shape();
 // const d = new Circle(1, 'red');
 
-// ************ Intermediate function inheritance(the extend function below)
+// ************ Intermediate function inheritance: (the extend function below)
 // function Shape(color){
 //     this.color = color;
 // }
@@ -1158,26 +1158,28 @@ circle.draw(); */
 // const goldfish = new Goldfish();
 // console.log(goldfish);
 
-// ************ Exercise: Prototypical Inheritance
-function HtmlElemnt(){
-    this.click = function() {
-        console.log('clicked');
-    };
-}
-HtmlElemnt.prototype.focus = function(){
-    console.log('focused');
-}
+// // ************ Exercise: Prototypical Inheritance *******************
+// function HtmlElemnt(){
+//     this.click = function() {
+//         console.log('clicked');
+//     };
+// }
+// HtmlElemnt.prototype.focus = function(){
+//     console.log('focused');
+// }
 
-function HtmlSelectElement(items = []) {
-    this.items = items;
-    this.addItem = function(item) {
-        this.items.push(item);
-    }
-    this.removeItem = function(item) {
-        this.items.splice(this.items.indexOf(item), 1);
-    }
-}
-// Must use 'new' below instead of the Object.create method in order to keep the click function element as its inherited prototype.
-// As well as resetting the constructor so we can reuse it as itself if needed.
-HtmlSelectElement.prototype = new HtmlElemnt(); 
-HtmlSelectElement.prototype.constructor = HtmlSelectElement;
+// function HtmlSelectElement(items = []) {
+//     this.items = items;
+//     this.addItem = function(item) {
+//         this.items.push(item);
+//     }
+//     this.removeItem = function(item) {
+//         this.items.splice(this.items.indexOf(item), 1);
+//     }
+// }
+// // Must use 'new' below instead of the Object.create method in order to keep the click function element as its inherited prototype.
+// // As well as resetting the constructor so we can reuse it as itself if needed.
+// HtmlSelectElement.prototype = new HtmlElemnt(); 
+// HtmlSelectElement.prototype.constructor = HtmlSelectElement;
+
+// *********** Exercise: Polymorphism ***************
