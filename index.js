@@ -1011,7 +1011,7 @@ circle.draw(); */
 // Lesson recap: Carefull when resetting prototypes, must also reset the constructor!
 
 
-// // Creating my own prototypical inheritance
+// ************ Creating my own prototypical inheritance
 // // In live server, call "c" in dev tools in window browswer to check protoypical placements
 // function Shape(){
 // }
@@ -1028,10 +1028,10 @@ circle.draw(); */
 // Circle.prototype.draw = function(){
 //     console.log('draw');
 // }
-// const s = new Shape();
-// const c = new Circle(1);
+// const a = new Shape();
+// const b = new Circle(1);
 
-// // Calling the Super Constructor: 
+// ************ Calling the Super Constructor: 
 // // OUTPUT in dev tools in live server: type 'c', and the information inside the function will show the called placements
 // function Shape(color){
 //     this.color = color;
@@ -1048,10 +1048,10 @@ circle.draw(); */
 // Circle.prototype.draw = function(){
 //     console.log('draw');
 // }
-// const s = new Shape();
-// const c = new Circle(1, 'red');
+// const c = new Shape();
+// const d = new Circle(1, 'red');
 
-// // Intermediate function inheritance(the extend function below)
+// ************ Intermediate function inheritance(the extend function below)
 // function Shape(color){
 //     this.color = color;
 // }
@@ -1063,7 +1063,7 @@ circle.draw(); */
 //     Child.prototype.constructor = Child;  
 // }
 // function Circle(radius, color) {
-//     Shape.call(this, color);
+//     Shape.call(this, color); // 'call' links the comlications with 'this' for Shape and color
 //     this.radius = radius;
 // }
 // extend(Circle, Shape);
@@ -1074,10 +1074,10 @@ circle.draw(); */
 //     this.size = size;
 // }
 // extend(Square, Shape);
-// const s = new Shape();
-// const c = new Circle(1, 'red');
+// const e = new Shape();
+// const f = new Circle(1, 'red');
 
-// // Method overriding: c.duplicate() in live server dev tools console
+// ************ Method overriding: c.duplicate() in live server dev tools console
 // function extend(Child, Parent) {
 //     Child.prototype = Object.create(Parent.prototype);
 //     Child.prototype.constructor = Child;
@@ -1094,9 +1094,9 @@ circle.draw(); */
 //     Shape.prototype.duplicate.call(this); // this line is to show the parent element as well as the child element that would normally only be called
 //     console.log('duplicate circle');
 // }
-// const c = new Circle();
+// const g = new Circle();
 
-// // Polymorphism: Making 'duplicate' versatile shown in dev tools in live server
+// ************ Polymorphism: Making 'duplicate' versatile shown in dev tools in live server
 // function extend(Child, Parent) {
 //     Child.prototype = Object.create(Parent.prototype);
 //     Child.prototype.constructor = Child;
@@ -1125,7 +1125,7 @@ circle.draw(); */
 // for (let shape of shapes)
 //     shape.duplicate();
 
-// // Mixins
+// ********* Mixins
 // function mixin(target, ...sources) {
 //     Object.assign(target, ...sources);
 // }
@@ -1158,3 +1158,26 @@ circle.draw(); */
 // const goldfish = new Goldfish();
 // console.log(goldfish);
 
+// ************ Exercise: Prototypical Inheritance
+function HtmlElemnt(){
+    this.click = function() {
+        console.log('clicked');
+    };
+}
+HtmlElemnt.prototype.focus = function(){
+    console.log('focused');
+}
+
+function HtmlSelectElement(items = []) {
+    this.items = items;
+    this.addItem = function(item) {
+        this.items.push(item);
+    }
+    this.removeItem = function(item) {
+        this.items.splice(this.items.indexOf(item), 1);
+    }
+}
+// Must use 'new' below instead of the Object.create method in order to keep the click function element as its inherited prototype.
+// As well as resetting the constructor so we can reuse it as itself if needed.
+HtmlSelectElement.prototype = new HtmlElemnt(); 
+HtmlSelectElement.prototype.constructor = HtmlSelectElement;
