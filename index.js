@@ -1219,3 +1219,88 @@ circle.draw(); */
 // HtmlSelectElement.prototype.constructor = HtmlSelectElement;
 // ***************************************************************************************
 
+// // ********************** Classes **********************
+// class Circle {
+//     constructor (radius){
+//         this.radius = radius;
+//         this.move = function(){}
+//     }
+//     draw(){
+//         console.log('draw');
+//     }
+// }
+// const c = new Circle(1);
+
+// // As with function declarations vs expressions; there are class declaration and class expressions
+// // Class declarations, unlike functions which are hoisted, class declarartions are not hoisted.
+// class Circle(){}
+// // Class expression
+// const Square = class {
+// };
+
+// // ******** Static Methods: used to create utility functions that are not tied to a particular Object
+// class Circle{
+//     constructor(radius) {
+//         this.radius = radius;
+//     }
+//     // the draw method is an Instance Method; on that instance the draw method is shown in the prototype
+//     draw(){}
+//     // the parse method is a Static Method
+//     // Static Methods are available in the class itself, not the Object Instance(dev tools console)
+//     static parse(str){
+//         const radius = JSON.parse(str).radius;
+//         return  new Circle(radius);
+//     }
+// }
+// const circle = Circle.parse('{ "radius": 1 }');
+// console.log(circle);
+
+// // ***** new primitive type, Symbol(), a function that calls a unique identifier, also not a constructor so can't use 'new'
+// // ***** to make private elements like the _draw and _radius bracket notation using symbols.
+// const _radius = Symbol();
+// const _draw = Symbol();
+// class Circle{
+//     constructor(radius){
+//         /* this.radius = radius; These two lines are the same. Dot notation vs bracket. Use bracket for the following example and beyond
+//            this['radius'] = radius; */
+//            this[_radius] = radius;
+//         }
+//         [_draw](){
+//         }
+// }
+// const c = new Circle(1);
+// const key = Object.getOwnPropertySymbols(c)(0);
+// console.log(c[key]);
+
+// // How to use 'weakmaps' types in modern ES6 to implement private properties and methods in an object
+// // Basaically to start, you want to turn the capitalized 'this.RADIUS = radius;' into a private property. So set the 'weakmap()'
+// // weakmaps are dictionaries: where keys are objects and values can be anything. 
+// const _radius = new WeakMap();
+// const _move = new WeakMap();
+// // ALTERNATIVE: const privateProps = new WeakMap();
+// class Circle{
+//     constructor(radius){
+//         // this.radius = radius;  Won't need this line anymore but just kept for reference for this lesson's descriptor
+//         // Next line '_radius' is the weakmap call.
+//         _radius.set(this, radius);
+//         // Next line if access this class inside this property or we want to read it somewhere
+//         _move.set(this, () => { // this arrow function utilizes an inherent 'this' value of their containing functions to inherit through the constructor function
+//             console.log('move', this);
+//         /* ALTERNATIVE: 
+//         privateProps.set(this, {
+//             radius: radius,
+//             move: () => {
+//             }
+//         });
+//         TO ACCESS: privateProps.get(this).radius; *CAUTION* */
+//         });
+//     }
+//     // The below draw method is a public method, we want to try to call the private move method. So I commented out the _radius.get weakmap line
+//     draw(){
+//         // console.log(_radius.get(this)); // returns value of 'radius' property
+//         _move.get(this)(); // 'this' returns a function that is immediately being called via the parenthesis 
+//         console.log('draw');
+//     }
+// }
+// const c = new Circle(1);
+
