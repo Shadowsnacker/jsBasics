@@ -1280,13 +1280,12 @@ circle.draw(); */
 // // ALTERNATIVE: const privateProps = new WeakMap();
 // class Circle{
 //     constructor(radius){
-//         // this.radius = radius;  Won't need this line anymore but just kept for reference for this lesson's descriptor
-//         // Next line '_radius' is the weakmap call.
+//         // this.radius = radius;  Won't need this line anymore but just kept for reference for this lesson's descriptor. Next line is call
 //         _radius.set(this, radius);
 //         // Next line if access this class inside this property or we want to read it somewhere
 //         _move.set(this, () => { // this arrow function utilizes an inherent 'this' value of their containing functions to inherit through the constructor function
 //             console.log('move', this);
-//         /* ALTERNATIVE: 
+//         /* ALTERNATIVE: CAUTION
 //         privateProps.set(this, {
 //             radius: radius,
 //             move: () => {
@@ -1300,6 +1299,23 @@ circle.draw(); */
 //         // console.log(_radius.get(this)); // returns value of 'radius' property
 //         _move.get(this)(); // 'this' returns a function that is immediately being called via the parenthesis 
 //         console.log('draw');
+//     }
+// }
+// const c = new Circle(1);
+
+// // Getters and Setters: instead of c.radius() method call in live server, get allows to just call the property with c.radius
+// const _radius = new WeakMap();
+// class Circle{
+//     constructor(radius){
+//         _radius.set(this, radius);
+//     }
+//     get radius(){ // !!** get is a keyword and is accessing radius like a property even though it looks like a method
+//         return _radius.get(this);
+//     }
+//     // Can still define a setter as well
+//     set radius(value){
+//         if (value <= 0) throw new Error('Invalid Radius');
+//         _radius.set(this, value); // this line allows you to change the value of the inherit (1) with c.radius = 10
 //     }
 // }
 // const c = new Circle(1);
