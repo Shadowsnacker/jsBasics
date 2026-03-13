@@ -1220,11 +1220,21 @@ circle.draw(); */
 // ***************************************************************************************
 
 // // ********************** Classes **********************
+// //**** Next 4 lines is old Constructor way to build
+// function Circle(radius) {
+//     this.radius = radius;
+//     this.draw = function() {
+//         console.log('draw');
+//     }
+// }
+// //**** So begins JavaScript classes. Has 'function' classification
 // class Circle {
+//      // Inside the constructor below will be in 
 //     constructor (radius){
 //         this.radius = radius;
 //         this.move = function(){}
 //     }
+//      // All methods placed outside the constructor function will be placed in the prototype
 //     draw(){
 //         console.log('draw');
 //     }
@@ -1319,4 +1329,17 @@ circle.draw(); */
 //     }
 // }
 // const c = new Circle(1);
+
+// Inheriting Classes
+class Shape {
+    move(){
+        console.log('move');
+    }
+}
+class Circle extends Shape{ // 'extends Shape' is what allows us to inherit from the Shape class
+    draw(){
+        console.log('draw');
+    }
+}
+const c = new Circle();
 
