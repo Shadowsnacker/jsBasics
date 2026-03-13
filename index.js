@@ -1330,16 +1330,24 @@ circle.draw(); */
 // }
 // const c = new Circle(1);
 
-// Inheriting Classes
-class Shape {
-    move(){
-        console.log('move');
-    }
-}
-class Circle extends Shape{ // 'extends Shape' is what allows us to inherit from the Shape class
-    draw(){
-        console.log('draw');
-    }
-}
-const c = new Circle();
+// // Inheriting Classes
+// class Shape {
+//     constructor(color){
+//         this.color = color;
+//     }
+//     move(){
+//         console.log('move');
+//     }
+// }
+// class Circle extends Shape{ // 'extends Shape' is what allows us to inherit from the Shape class
+//     // putting a constructor below must call the super constructor above
+//     constructor(color, radius){
+//         super(color);  // inherited from parent class
+//         this.radius = radius; // added radius on the Circle class itself 
+//     }
+//     draw(){
+//         console.log('draw');
+//     }
+// }
+// const c = new Circle('red', 1);
 
